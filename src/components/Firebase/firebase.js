@@ -1,10 +1,11 @@
 const config = {
-  apiKey: process.env.GATSBY_API_KEY,
-  authDomain: process.env.GATSBY_AUTH_DOMAIN,
-  databaseURL: process.env.GATSBY_DATABASE_URL,
-  projectId: process.env.GATSBY_PROJECT_ID,
-  storageBucket: process.env.GATSBY_STORAGE_BUCKET,
-  messagingSenderId: process.env.GATSBY_MESSAGING_SENDER_ID,
+  apiKey: 'AIzaSyDbWIS7NPu5bZ7dOvMjleTYnYasTdm8qSA',
+  authDomain: 'mywebcomponentss.firebaseapp.com',
+  databaseURL: 'https://mywebcomponentss.firebaseio.com',
+  projectId: 'mywebcomponentss',
+  storageBucket: '',
+  messagingSenderId: '45231235288',
+  appId: '1:45231235288:web:d6f40793a0d70703',
 };
 
 class Firebase {
