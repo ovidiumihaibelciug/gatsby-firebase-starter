@@ -1,0 +1,222 @@
+//font variables
+//$font-roboto: 'Roboto', sans-serif;
+
+//https://www.sitepoint.com/understanding-and-using-rem-units-in-css/
+$base-font-size: 62.5%; //1 rem = 10px
+$base-line-height: 1.2;
+
+$o-color-nav: rgb(27, 32, 42);
+$o-color-main: rgb(0, 169, 255);
+$o-color-bg: #141c24;
+$o-color-red: #c23616;
+$o-color-yellow: rgb(251, 197, 49);
+
+//colour variables
+//Update the variables to match the template
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-page-bg: white;
+
+$color-main: $o-color-main;
+$color-main-dark: black;
+$color-main-light: black;
+$color-accent: black;
+$color-text: black;
+$color-text-secondary: black;
+$color-divider: rgba(black, 0.12);
+
+$color-error: #f44336;
+$color-success: #4caf50;
+$color-warning: #ff9800;
+$color-info: #03a9f4;
+
+$color-tooltip-bg: black;
+
+//Material Design shadows
+$shadow-dp0: 0px 0px 0px 0px rgba(black, 0.2), 0px 0px 0px 0px rgba(black, 0.14),
+  0px 0px 0px 0px rgba(black, 0.12);
+$shadow-dp1: 0px 2px 1px -1px rgba(black, 0.2),
+  0px 1px 1px 0px rgba(black, 0.14), 0px 1px 3px 0px rgba(black, 0.12);
+$shadow-dp2: 0px 3px 1px -2px rgba(black, 0.2),
+  0px 2px 2px 0px rgba(black, 0.14), 0px 1px 5px 0px rgba(black, 0.12); //card, button
+$shadow-dp3: 0px 3px 3px -2px rgba(black, 0.2),
+  0px 3px 4px 0px rgba(black, 0.14), 0px 1px 8px 0px rgba(black, 0.12);
+$shadow-dp4: 0px 2px 4px -1px rgba(black, 0.2),
+  0px 4px 5px 0px rgba(black, 0.14), 0px 1px 10px 0px rgba(black, 0.12); //toolbar
+$shadow-dp5: 0 3px 5px -1px rgba(black, 0.2), 0px 5px 8px 0px rgba(black, 0.14),
+  0px 1px 14px 0px rgba(black, 0.12);
+$shadow-dp6: 0 3px 5px -1px rgba(black, 0.2), 0px 6px 10px 0px rgba(black, 0.14),
+  0px 1px 18px 0px rgba(black, 0.12);
+$shadow-dp7: 0 4px 5px -2px rgba(black, 0.2), 0px 7px 10px 1px rgba(black, 0.14),
+  0px 2px 16px 1px rgba(black, 0.12);
+$shadow-dp8: 0 5px 5px -3px rgba(black, 0.2), 0px 8px 10px 1px rgba(black, 0.14),
+  0px 3px 14px 2px rgba(black, 0.12); //card, button raised
+$shadow-dp9: 0 5px 6px -3px rgba(black, 0.2), 0px 9px 12px 1px rgba(black, 0.14),
+  0px 3px 16px 2px rgba(black, 0.12);
+$shadow-dp10: 0 6px 6px -3px rgba(black, 0.2),
+  0px 10px 14px 1px rgba(black, 0.14), 0px 4px 18px 3px rgba(black, 0.12);
+$shadow-dp11: 0 6px 7px -4px rgba(black, 0.2),
+  0px 11px 15px 1px rgba(black, 0.14), 0px 4px 20px 3px rgba(black, 0.12);
+$shadow-dp12: 0 7px 8px -4px rgba(black, 0.2),
+  0px 12px 17px 2px rgba(black, 0.14), 0px 5px 22px 4px rgba(black, 0.12);
+$shadow-dp13: 0px 7px 8px -4px rgba(black, 0.2),
+  0px 13px 19px 2px rgba(black, 0.14), 0px 5px 24px 4px rgba(black, 0.12);
+$shadow-dp14: 0px 7px 9px -4px rgba(black, 0.2),
+  0px 14px 21px 2px rgba(black, 0.14), 0px 5px 26px 4px rgba(black, 0.12);
+$shadow-dp15: 0px 8px 9px -5px rgba(black, 0.2),
+  0px 15px 22px 2px rgba(black, 0.14), 0px 6px 28px 5px rgba(black, 0.12);
+$shadow-dp16: 0px 8px 10px -5px rgba(black, 0.2),
+  0px 16px 24px 2px rgba(black, 0.14), 0px 6px 30px 5px rgba(black, 0.12);
+$shadow-dp17: 0px 8px 11px -5px rgba(black, 0.2),
+  0px 17px 26px 2px rgba(black, 0.14), 0px 6px 32px 5px rgba(black, 0.12);
+$shadow-dp18: 0px 9px 11px -5px rgba(black, 0.2),
+  0px 18px 28px 2px rgba(black, 0.14), 0px 7px 34px 6px rgba(black, 0.12);
+$shadow-dp19: 0px 9px 12px -6px rgba(black, 0.2),
+  0px 19px 29px 2px rgba(black, 0.14), 0px 7px 36px 6px rgba(black, 0.12);
+$shadow-dp20: 0px 10px 13px -6px rgba(black, 0.2),
+  0px 20px 31px 3px rgba(black, 0.14), 0px 8px 38px 7px rgba(black, 0.12);
+$shadow-dp21: 0px 10px 13px -6px rgba(black, 0.2),
+  0px 21px 33px 3px rgba(black, 0.14), 0px 8px 40px 7px rgba(black, 0.12);
+$shadow-dp22: 0px 10px 14px -6px rgba(black, 0.2),
+  0px 22px 35px 3px rgba(black, 0.14), 0px 8px 42px 7px rgba(black, 0.12);
+$shadow-dp23: 0px 11px 14px -7px rgba(black, 0.2),
+  0px 23px 36px 3px rgba(black, 0.14), 0px 9px 44px 8px rgba(black, 0.12);
+$shadow-dp24: 0px 11px 15px -7px rgba(black, 0.2),
+  0px 24px 38px 3px rgba(black, 0.14), 0px 9px 46px 8px rgba(black, 0.12); //dialog
+
+$text-shadow: 2px 2px 7px rgba($color-black, 0.2);
+
+//animation curves
+$animation-standard-curve: cubic-bezier(0.4, 0, 0.2, 1);
+
+//headings size
+$heading-size-1: 32px !default;
+$heading-size-2: 28px !default;
+$heading-size-3: 24px !default;
+$heading-size-4: 20px !default;
+$heading-size-5: 18px !default;
+$heading-size-6: 16px !default;
+
+//z-index
+$z-1: 1;
+$z-2: 2;
+$z-3: 3;
+$z-4: 4;
+$z-5: 5;
+$z-6: 6;
+$z-7: 7;
+$z-8: 8;
+$z-9: 9;
+$z-10: 10; //card actions
+$z-11: 11; //sidebar, static header
+$z-12: 12; //dialog
+$z-15: 15; //notifications
+
+//paths
+$img-path: "./assets/img";
+$font-path: "./assets/font";
+
+//font variables
+$font-main: 'Roboto Condensed', sans-serif;
+$base-font-size: 62.5%;
+
+//colour variables
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-page-bg: #f7f6f6;
+$color-main: $o-color-main;
+
+$color-text: #070f18;
+$color-text-secondary: #4d5a68;
+$color-text-header: #362b27;
+$color-gray: #c0bcbc;
+
+$color-input-bg: #ebebeb;
+
+$color-hover: rgba(#e1e1e1, 0.7);
+$color-placeholder: #969292;
+
+$color-divider: #ece7e3;
+
+$color-ebony: #060c13;
+$color-zoom_bg: #333643;
+
+
+
+$color-career-nickel: #c6c6c2;
+$color-career-mist: #b2d4d6;
+$color-career-mischka: #e7e2e8;
+$color-career-orange: #ed784f;
+$color-career-mystic: #e6ebef;
+$color-green: #82ca9c;
+
+
+
+$color-error: #8b0000;
+$color-success: #4CAF50;
+$color-warning: #FFA000;
+$color-tooltip-bg: rgba(black, 0.95);
+
+$gutter: 20px;
+
+//shadow light version, half of opacity
+$shadow-dp0: 0px 0px 0px 0px rgba(black, 0.1), 0px 0px 0px 0px rgba(black, 0.07), 0px 0px 0px 0px rgba(black, 0.06);
+$shadow-dp1: 0px 2px 1px -1px rgba(black, 0.1), 0px 1px 1px 0px rgba(black, 0.07), 0px 1px 3px 0px rgba(black, 0.06);
+$shadow-dp2: 0px 3px 1px -2px rgba(black, 0.1), 0px 2px 2px 0px rgba(black, 0.07), 0px 1px 5px 0px rgba(black, 0.06); //card, button
+$shadow-dp3: 0px 3px 3px -2px rgba(black, 0.1), 0px 3px 4px 0px rgba(black, 0.07), 0px 1px 8px 0px rgba(black, 0.06);
+$shadow-dp4: 0px 2px 4px -1px rgba(black, 0.1), 0px 4px 5px 0px rgba(black, 0.07), 0px 1px 10px 0px rgba(black, 0.06); //toolbar
+$shadow-dp5: 0 3px 5px -1px rgba(black, 0.1), 0px 5px 8px 0px rgba(black, 0.07), 0px 1px 14px 0px rgba(black, 0.06);
+$shadow-dp6: 0 3px 5px -1px rgba(black, 0.1), 0px 6px 10px 0px rgba(black, 0.07), 0px 1px 18px 0px rgba(black, 0.06);
+$shadow-dp7: 0 4px 5px -2px rgba(black, 0.1), 0px 7px 10px 1px rgba(black, 0.07), 0px 2px 16px 1px rgba(black, 0.06);
+$shadow-dp8: 0 5px 5px -3px rgba(black, 0.1), 0px 8px 10px 1px rgba(black, 0.07), 0px 3px 14px 2px rgba(black, 0.06); //card, button raised
+$shadow-dp9: 0 5px 6px -3px rgba(black, 0.1), 0px 9px 12px 1px rgba(black, 0.07), 0px 3px 16px 2px rgba(black, 0.06);
+$shadow-dp10: 0 6px 6px -3px rgba(black, 0.1), 0px 10px 14px 1px rgba(black, 0.07), 0px 4px 18px 3px rgba(black, 0.06);
+$shadow-dp11: 0 6px 7px -4px rgba(black, 0.1), 0px 11px 15px 1px rgba(black, 0.07), 0px 4px 20px 3px rgba(black, 0.06);
+$shadow-dp12: 0 7px 8px -4px rgba(black, 0.1), 0px 12px 17px 2px rgba(black, 0.07), 0px 5px 22px 4px rgba(black, 0.06);
+$shadow-dp13: 0px 7px 8px -4px rgba(black, 0.1), 0px 13px 19px 2px rgba(black, 0.07), 0px 5px 24px 4px rgba(black, 0.06);
+$shadow-dp14: 0px 7px 9px -4px rgba(black, 0.1), 0px 14px 21px 2px rgba(black, 0.07), 0px 5px 26px 4px rgba(black, 0.06);
+$shadow-dp15: 0px 8px 9px -5px rgba(black, 0.1), 0px 15px 22px 2px rgba(black, 0.07), 0px 6px 28px 5px rgba(black, 0.06);
+$shadow-dp16: 0px 8px 10px -5px rgba(black, 0.1), 0px 16px 24px 2px rgba(black, 0.07), 0px 6px 30px 5px rgba(black, 0.06);
+$shadow-dp17: 0px 8px 11px -5px rgba(black, 0.1), 0px 17px 26px 2px rgba(black, 0.07), 0px 6px 32px 5px rgba(black, 0.06);
+$shadow-dp18: 0px 9px 11px -5px rgba(black, 0.1), 0px 18px 28px 2px rgba(black, 0.07), 0px 7px 34px 6px rgba(black, 0.06);
+$shadow-dp19: 0px 9px 12px -6px rgba(black, 0.1), 0px 19px 29px 2px rgba(black, 0.07), 0px 7px 36px 6px rgba(black, 0.06);
+$shadow-dp20: 0px 10px 13px -6px rgba(black, 0.1), 0px 20px 31px 3px rgba(black, 0.07), 0px 8px 38px 7px rgba(black, 0.06);
+$shadow-dp21: 0px 10px 13px -6px rgba(black, 0.1), 0px 21px 33px 3px rgba(black, 0.07), 0px 8px 40px 7px rgba(black, 0.06);
+$shadow-dp22: 0px 10px 14px -6px rgba(black, 0.1), 0px 22px 35px 3px rgba(black, 0.07), 0px 8px 42px 7px rgba(black, 0.06);
+$shadow-dp23: 0px 11px 14px -7px rgba(black, 0.1), 0px 23px 36px 3px rgba(black, 0.07), 0px 9px 44px 8px rgba(black, 0.06);
+$shadow-dp24: 0px 11px 15px -7px rgba(black, 0.1), 0px 24px 38px 3px rgba(black, 0.07), 0px 9px 46px 8px rgba(black, 0.06); //dialog
+
+$text-shadow: 2px 2px 7px rgba($color-black, 0.2);
+
+
+//headings size
+$mds-heading-size-1:  60px !default;
+$mds-heading-size-2:  48px !default;
+$mds-heading-size-3:  36px !default;
+$mds-heading-size-4:  30px !default;
+$mds-heading-size-5:  24px !default;
+$mds-heading-size-6:  18px !default;
+
+//z-index
+$mds-z-1: 1;
+$mds-z-2: 2;
+$mds-z-3: 3;
+$mds-z-4: 4;
+$mds-z-5: 5;
+$mds-z-6: 6;
+$mds-z-7: 7;
+$mds-z-8: 8;
+$mds-z-9: 9;
+$mds-z-10: 10; //card actions
+$mds-z-11: 11; //sidebar, static header
+$mds-z-12: 12; //full-width dialog
+$mds-z-13: 13;
+$mds-z-14: 14; //dialog
+$mds-z-15: 15; //notifications
+$mds-z-16: 16; //notifications
+
+//paths
+$img-path: "./assets/img";
+$font-path: "./assets/font";
