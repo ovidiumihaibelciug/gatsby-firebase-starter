@@ -7,9 +7,9 @@ import {
   withAuthorization,
   withEmailVerification,
 } from '../components/Session';
-import PasswordForgetForm from '../components/PasswordForget';
-import PasswordChangeForm from '../components/PasswordChange';
-import LoginManagement from '../components/LoginManagement';
+import PasswordForgetForm from '../scenes/PasswordForget';
+import PasswordChangeForm from '../scenes/PasswordChange';
+import LoginManagement from '../scenes/LoginManagement';
 
 const AccountPageBase = () => (
   <Fragment>

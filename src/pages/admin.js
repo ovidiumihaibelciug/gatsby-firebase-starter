@@ -6,7 +6,7 @@ import {
   withAuthorization,
   withEmailVerification,
 } from '../components/Session';
-import { UserList } from '../components/Users';
+import { UserList } from '../scenes/Users';
 import * as ROLES from '../constants/roles';
 
 const AdminPageBase = () => (

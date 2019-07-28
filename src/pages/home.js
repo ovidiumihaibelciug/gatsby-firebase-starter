@@ -6,7 +6,7 @@ import {
   withAuthorization,
   withEmailVerification,
 } from '../components/Session';
-import Messages from '../components/Messages';
+import Messages from '../scenes/Messages';
 
 const HomePageBase = () => (
   <div>

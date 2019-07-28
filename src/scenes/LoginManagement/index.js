@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { withFirebase } from '../Firebase';
+import { withFirebase } from '../../components/Firebase';
 
 const SIGN_IN_METHODS = [
   {

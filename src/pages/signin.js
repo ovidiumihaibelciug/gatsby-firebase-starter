@@ -5,9 +5,9 @@ import SignInForm, {
   SignInGoogle,
   SignInFacebook,
   SignInTwitter,
-} from '../components/SignIn';
-import { SignUpLink } from '../components/SignUp';
-import { PasswordForgetLink } from '../components/PasswordForget';
+} from '../scenes/SignIn';
+import { SignUpLink } from '../scenes/SignUp';
+import { PasswordForgetLink } from '../scenes/PasswordForget';
 
 const SignInPage = () => (
   <Fragment>
