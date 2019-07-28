@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
 import Layout from '../components/layout';
-import PasswordForgetForm from '../scenes/PasswordForget';
+import PasswordForgetForm from '../components/PasswordForget';
 
 const PasswordForgetPage = () => (
   <Fragment>

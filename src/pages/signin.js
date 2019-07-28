@@ -7,7 +7,7 @@ import SignInForm, {
   SignInTwitter,
 } from '../scenes/SignIn';
 import { SignUpLink } from '../scenes/SignUp';
-import { PasswordForgetLink } from '../scenes/PasswordForget';
+import { PasswordForgetLink } from '../components/PasswordForget';
 
 const SignInPage = () => (
   <Fragment>

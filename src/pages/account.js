@@ -7,7 +7,7 @@ import {
   withAuthorization,
   withEmailVerification,
 } from '../components/Session';
-import PasswordForgetForm from '../scenes/PasswordForget';
+import PasswordForgetForm from '../components/PasswordForget';
 import PasswordChangeForm from '../scenes/PasswordChange';
 import LoginManagement from '../scenes/LoginManagement';
 
