@@ -22,8 +22,6 @@ class Messages extends Component {
     if (this.props.firebase && !this._initFirebase) {
       this._initFirebase = true;
 
-      console.log('asd');
-
       this.onListenForMessages();
     }
   };
