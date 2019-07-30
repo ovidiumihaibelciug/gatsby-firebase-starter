@@ -9,7 +9,7 @@ import {
 } from '../components/Session';
 import PasswordForgetForm from '../scenes/PasswordForget/PasswordForget';
 import PasswordChangeForm from '../scenes/PasswordChange/PasswordChange';
-import LoginManagement from '../scenes/Settings/components/LoginManagement/LoginManagement';
+import LoginManagement from '../scenes/Settings/molecules/LoginManagement/LoginManagement';
 
 const AccountPageBase = () => (
   <Fragment>

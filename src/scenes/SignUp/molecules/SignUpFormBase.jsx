@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Link, navigate } from 'gatsby';
+import { navigate } from 'gatsby';
 
-import { withFirebase } from '../../components/Firebase';
-import * as ROUTES from '../../constants/routes';
-import * as ROLES from '../../constants/roles';
+import { withFirebase } from '../../../components/Firebase';
+import * as ROUTES from '../../../constants/routes';
+import * as ROLES from '../../../constants/roles';
 
 const INITIAL_STATE = {
   username: '',
@@ -17,12 +17,12 @@ const INITIAL_STATE = {
 const ERROR_CODE_ACCOUNT_EXISTS = 'auth/email-already-in-use';
 
 const ERROR_MSG_ACCOUNT_EXISTS = `
-  An account with this E-Mail address already exists.
-  Try to login with this account instead. If you think the
-  account is already used from one of the social logins, try
-  to sign in with one of them. Afterward, associate your accounts
-  on your personal account page.
-`;
+    An account with this E-Mail address already exists.
+    Try to login with this account instead. If you think the
+    account is already used from one of the social logins, try
+    to sign in with one of them. Afterward, associate your accounts
+    on your personal account page.
+  `;
 
 class SignUpFormBase extends Component {
   constructor(props) {
@@ -140,12 +140,4 @@ class SignUpFormBase extends Component {
   }
 }
 
-const SignUpLink = () => (
-  <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-  </p>
-);
-
 export default withFirebase(SignUpFormBase);
-
-export { SignUpLink };

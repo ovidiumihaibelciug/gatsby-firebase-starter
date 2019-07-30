@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import SignInForm from './components/SignInForm';
-import SignInGoogle from './components/SignInGoogle';
-import SignInFacebook from './components/SignInFacebook';
-import SignInTwitter from './components/SignInTwitter';
-import { SignUpLink } from '../../scenes/SignUp';
+import SignInForm from './molecules/SignInForm';
+import SignInGoogle from './molecules/SignInGoogle';
+import SignInFacebook from './molecules/SignInFacebook';
+import SignInTwitter from './molecules/SignInTwitter';
+import SignUpLink from '../../scenes/SignUp/atoms/SignUpLink';
 import PasswordForgetLink from '../../components/PasswordForget/PasswordForgetLink';
 
 export class SignIn extends Component {
