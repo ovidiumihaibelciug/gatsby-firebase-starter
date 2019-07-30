@@ -5,7 +5,7 @@ import SignInGoogle from './components/SignInGoogle';
 import SignInFacebook from './components/SignInFacebook';
 import SignInTwitter from './components/SignInTwitter';
 import { SignUpLink } from '../../scenes/SignUp';
-import { PasswordForgetLink } from '../PasswordForget';
+import PasswordForgetLink from '../../components/PasswordForget/PasswordForgetLink';
 
 export class SignIn extends Component {
   render() {

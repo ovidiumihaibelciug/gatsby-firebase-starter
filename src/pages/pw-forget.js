@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react';
 
 import Layout from '../components/layout';
-import PasswordForgetForm from '../scenes/PasswordForget';
+import PasswordForget from '../scenes/PasswordForget/PasswordForget';
 
 const PasswordForgetPage = () => (
   <Fragment>
-    <h1>PasswordForget</h1>
-    <PasswordForgetForm />
+    <PasswordForget />
   </Fragment>
 );
 

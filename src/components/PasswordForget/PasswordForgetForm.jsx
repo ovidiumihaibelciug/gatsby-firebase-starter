@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'gatsby';
-
 import { withFirebase } from '../../components/Firebase';
-import * as ROUTES from '../../constants/routes';
 
 const INITIAL_STATE = {
   email: '',
@@ -59,12 +56,4 @@ class PasswordForgetForm extends Component {
   }
 }
 
-const PasswordForgetLink = () => (
-  <p>
-    <Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link>
-  </p>
-);
-
 export default withFirebase(PasswordForgetForm);
-
-export { PasswordForgetLink };
