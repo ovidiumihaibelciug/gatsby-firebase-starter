@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import Layout from '../components/layout';
+import Layout from '../utils/layout';
 import SignIn from '../scenes/SignIn/SignIn';
 
 const SignInPage = () => (

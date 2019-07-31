@@ -1,11 +1,11 @@
 import React from 'react';
 import { compose } from 'recompose';
 
-import Layout from '../components/layout';
+import Layout from '../utils/layout';
 import {
   withAuthorization,
   withEmailVerification,
-} from '../components/Session';
+} from '../utils/Session';
 import Messages from '../scenes/Messages';
 
 const HomePageBase = () => (

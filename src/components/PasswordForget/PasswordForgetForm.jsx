@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withFirebase } from '../../components/Firebase';
+import { withFirebase } from '../../utils/Firebase';
 
 const INITIAL_STATE = {
   email: '',

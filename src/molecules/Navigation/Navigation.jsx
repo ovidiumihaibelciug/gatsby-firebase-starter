@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AuthUserContext } from '../../components/Session';
+import { AuthUserContext } from '../../utils/Session';
 
 import NavigationAuth from './atoms/NavigationAuth';
 import NavigationNonAuth from './atoms/NavigationNonAuth';

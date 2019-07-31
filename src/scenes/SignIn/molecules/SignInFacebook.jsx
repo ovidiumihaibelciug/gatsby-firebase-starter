@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { navigate } from 'gatsby';
 
-import { withFirebase } from '../../../components/Firebase';
+import { withFirebase } from '../../../utils/Firebase';
 import * as ROUTES from '../../../constants/routes';
 
 const ERROR_CODE_ACCOUNT_EXISTS =

@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import { compose } from 'recompose';
 
-import Layout from '../components/layout';
+import Layout from '../utils/layout';
 import {
   AuthUserContext,
   withAuthorization,
   withEmailVerification,
-} from '../components/Session';
+} from '../utils/Session';
 import PasswordForgetForm from '../scenes/PasswordForget/PasswordForget';
 import PasswordChangeForm from '../scenes/PasswordChange/PasswordChange';
 import LoginManagement from '../scenes/Settings/molecules/LoginManagement/LoginManagement';

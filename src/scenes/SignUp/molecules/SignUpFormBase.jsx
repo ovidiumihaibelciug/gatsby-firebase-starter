@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withFirebase } from '../../../components/Firebase';
+import { withFirebase } from '../../../utils/Firebase';
 import * as ROUTES from '../../../constants/routes';
 import * as ROLES from '../../../constants/roles';
 import { navigate } from 'gatsby';

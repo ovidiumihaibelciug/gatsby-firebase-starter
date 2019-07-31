@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { withFirebase } from '../../../../components/Firebase';
+import { withFirebase } from '../../../../utils/Firebase';
 import SocialLoginToggle from './components/SocialLoginToggle';
 import DefaultLoginToggle from './components/DefaultLoginToggle';
 
