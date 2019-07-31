@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import Navigation from './Navigation';
+import Navigation from '../molecules/Navigation/Navigation';
 import getFirebase, { FirebaseContext } from './Firebase';
 import withAuthentication from './Session/withAuthentication';
 import '../styles/index.scss';
