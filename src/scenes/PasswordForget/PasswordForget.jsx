@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PasswordForgetForm from '../../components/PasswordForget/PasswordForgetForm';
+import PasswordForgetForm from '../../molecules/PasswordForget/PasswordForget';
 
 export class PasswordForget extends Component {
   render() {

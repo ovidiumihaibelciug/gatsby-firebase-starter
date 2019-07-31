@@ -5,7 +5,7 @@ import SignInGoogle from './molecules/SignInGoogle';
 import SignInFacebook from './molecules/SignInFacebook';
 import SignInTwitter from './molecules/SignInTwitter';
 import SignUpLink from '../../scenes/SignUp/atoms/SignUpLink';
-import PasswordForgetLink from '../../components/PasswordForget/PasswordForgetLink';
+import PasswordForgetLink from '../../molecules/PasswordForget/atoms/PasswordForgetLink';
 
 export class SignIn extends Component {
   render() {
