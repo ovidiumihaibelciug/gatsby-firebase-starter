@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-
 import Layout from '../utils/layout';
 import SignIn from '../scenes/SignIn/SignIn';
 

@@ -1,12 +1,10 @@
 import React from 'react';
 import { compose } from 'recompose';
-
 import Layout from '../utils/layout';
 import {
   withAuthorization,
   withEmailVerification,
 } from '../utils/Session';
-import Messages from '../scenes/Messages';
 
 const HomePageBase = () => (
   <div>
