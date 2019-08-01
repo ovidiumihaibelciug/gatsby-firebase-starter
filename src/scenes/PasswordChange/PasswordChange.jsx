@@ -3,7 +3,12 @@ import PasswordChangeForm from '../../molecules/PasswordChange/PasswordChange';
 
 export class PasswordChange extends Component {
   render() {
-    return <PasswordChangeForm />;
+    return (
+      <div>
+        <h1>PasswordChange</h1>
+        <PasswordChangeForm />
+      </div>
+    );
   }
 }
 
