@@ -1,27 +1,34 @@
+import app from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
+import 'firebase/functions';
+
 const config = {
-  apiKey: 'AIzaSyDbWIS7NPu5bZ7dOvMjleTYnYasTdm8qSA',
-  authDomain: 'mywebcomponentss.firebaseapp.com',
-  databaseURL: 'https://mywebcomponentss.firebaseio.com',
-  projectId: 'mywebcomponentss',
-  storageBucket: 'mywebcomponentss.appspot.com',
-  messagingSenderId: '45231235288',
-  appId: '1:45231235288:web:d6f40793a0d70703',
+  apiKey: 'AIzaSyD_k_ys8b0xKf5UNtKY7Kb0a2BbLz0mJjM',
+  authDomain: 'testing-ee269.firebaseapp.com',
+  databaseURL: 'https://testing-ee269.firebaseio.com',
+  projectId: 'testing-ee269',
+  storageBucket: 'testing-ee269.appspot.com',
+  messagingSenderId: '600298099925',
+  appId: '1:600298099925:web:8f4d145f2ea649ef',
 };
 
 class Firebase {
-  constructor(app) {
+  constructor() {
     app.initializeApp(config);
 
     /* Helper */
 
-    this.serverValue = app.database.ServerValue;
+    this.fieldValue = app.firestore.FieldValue;
     this.emailAuthProvider = app.auth.EmailAuthProvider;
 
     /* Firebase APIs */
 
     this.auth = app.auth();
-    this.db = app.database();
+    this.db = app.firestore();
+    this.functions = app.functions();
 
+    console.log(app);
     /* Social Sign In Method Provider */
 
     this.googleProvider = new app.auth.GoogleAuthProvider();
@@ -52,7 +59,7 @@ class Firebase {
 
   doSendEmailVerification = () =>
     this.auth.currentUser.sendEmailVerification({
-      url: process.env.GATSBY_CONFIRMATION_EMAIL_REDIRECT,
+      url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT,
     });
 
   doPasswordUpdate = password =>
@@ -64,9 +71,9 @@ class Firebase {
     this.auth.onAuthStateChanged(authUser => {
       if (authUser) {
         this.user(authUser.uid)
-          .once('value')
+          .get()
           .then(snapshot => {
-            const dbUser = snapshot.val();
+            const dbUser = snapshot.data();
 
             // default empty roles
             if (!dbUser.roles) {
@@ -91,9 +98,9 @@ class Firebase {
 
   // *** User API ***
 
-  user = uid => this.db.ref(`users/${uid}`);
+  user = uid => this.db.doc(`users/${uid}`);
 
-  users = () => this.db.ref('users');
+  users = () => this.db.collection('users');
 }
 
 let firebase;
