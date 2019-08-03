@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import { withFirebase } from '../../../../utils/Firebase';
-import SocialLoginToggle from './components/SocialLoginToggle';
-import DefaultLoginToggle from './components/DefaultLoginToggle';
+import { withFirebase } from '../../../../../utils/Firebase';
+import SocialLoginToggle from './atoms/SocialLoginToggle';
+import DefaultLoginToggle from './atoms/DefaultLoginToggle';
 
 const SIGN_IN_METHODS = [
   {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import * as ROUTES from '../../../constants/routes';
+import * as ROUTES from '../../../../constants/routes';
 
 const NavigationNonAuth = () => (
   <ul>

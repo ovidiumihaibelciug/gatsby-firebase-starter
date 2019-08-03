@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { withFirebase } from '../../utils/Firebase';
+import { withFirebase } from '../../../utils/Firebase';
 import PasswordChangeForm from './molecules/PasswordChangeForm';
 
 const INITIAL_STATE = {

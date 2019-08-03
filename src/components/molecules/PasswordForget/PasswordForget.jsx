@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withFirebase } from '../../utils/Firebase';
+import { withFirebase } from '../../../utils/Firebase';
 import PasswordForgetForm from './atoms/PasswordForgetForm';
 
 const INITIAL_STATE = {
