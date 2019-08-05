@@ -1,15 +1,18 @@
 import React from 'react';
 import { compose } from 'recompose';
 import Layout from '../utils/layout';
+
 import {
   withAuthorization,
   withEmailVerification,
 } from '../utils/Session';
+import Home from '../components/scenes/Home/Home';
 
 const HomePageBase = () => (
   <div>
     <h1>Home Page</h1>
     <p>The Home Page is accessible by every signed in user.</p>
+    <Home />
   </div>
 );
 

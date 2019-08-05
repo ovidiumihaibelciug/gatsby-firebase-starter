@@ -4,13 +4,13 @@ import 'firebase/firestore';
 import 'firebase/functions';
 
 const config = {
-  apiKey: 'AIzaSyD_k_ys8b0xKf5UNtKY7Kb0a2BbLz0mJjM',
-  authDomain: 'testing-ee269.firebaseapp.com',
-  databaseURL: 'https://testing-ee269.firebaseio.com',
-  projectId: 'testing-ee269',
-  storageBucket: 'testing-ee269.appspot.com',
-  messagingSenderId: '600298099925',
-  appId: '1:600298099925:web:8f4d145f2ea649ef',
+  apiKey: 'AIzaSyDbWIS7NPu5bZ7dOvMjleTYnYasTdm8qSA',
+  authDomain: 'mywebcomponentss.firebaseapp.com',
+  databaseURL: 'https://mywebcomponentss.firebaseio.com',
+  projectId: 'mywebcomponentss',
+  storageBucket: 'mywebcomponentss.appspot.com',
+  messagingSenderId: '45231235288',
+  appId: '1:45231235288:web:d6f40793a0d70703',
 };
 
 class Firebase {
@@ -101,6 +101,8 @@ class Firebase {
   user = uid => this.db.doc(`users/${uid}`);
 
   users = () => this.db.collection('users');
+
+  posts = () => this.db.collection('posts');
 }
 
 let firebase;
