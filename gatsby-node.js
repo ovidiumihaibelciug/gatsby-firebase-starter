@@ -1,43 +1,8 @@
-// // Implement the Gatsby API “onCreatePage”. This is
-// // called after every page is created.
-
-// const path = require(`path`);
-
-// exports.onCreatePage = async ({ page, actions }) => {
-//   const { createPage } = actions;
-
-//   // const app = firebase.initializeApp(config);
-
-//   const blogPostTemplate = path.resolve(`src/templates/post.js`);
-
-//   // app.firestore().collection('posts')
-//   //   .get()
-//   //   .then(querySnapshot => {
-//   //     console.log(querySnapshot.docs);
-//   //     querySnapshot.docs.forEach(item => {
-//   //       const post = item.data();
-
-//   createPage({
-//     // Path for this page — required
-//     path: `/post/asd`,
-//     component: blogPostTemplate,
-//     context: {
-//       // Add optional context data to be inserted
-//       // as props into the page component..
-//       //
-//       // The context data can also be used as
-//       // arguments to the page GraphQL query.
-//       //
-//       // The page "path" is always available as a GraphQL
-//       // argument.
-//     },
-//   });
-//   // });
-// };
-
 const path = require(`path`);
 
 const firebase = require('firebase');
+
+const routes = require('./templates.js');
 
 const config = {
   apiKey: 'AIzaSyDbWIS7NPu5bZ7dOvMjleTYnYasTdm8qSA',
@@ -51,26 +16,35 @@ const config = {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const blogPostTemplate = path.resolve(`src/templates/post.js`);
-
   const app = firebase.initializeApp(config);
 
-  await app
-    .firestore()
-    .collection('posts')
-    .get()
-    .then(querySnapshot => {
-      console.log(querySnapshot.docs);
-      querySnapshot.docs.forEach(item => {
-        const post = item.data();
-        createPage({
-          // Path for this page — required
-          path: `/post/${post.title}`,
-          component: blogPostTemplate,
-          context: {
-            id: post.title,
-          },
+  routes.forEach(
+    async ({
+      collection,
+      path: routePath,
+      slug,
+      fileName,
+      context,
+    }) => {
+      const Template = path.resolve(`src/templates/${fileName}.js`);
+
+      app
+        .firestore()
+        .collection(collection)
+        .get()
+        .then(querySnapshot => {
+          querySnapshot.docs.forEach(item => {
+            const post = item.data();
+            createPage({
+              path: `${routePath}/${post[slug]}`,
+              component: Template,
+              context: context.reduce((acc, curr) => {
+                acc[curr] = post[curr];
+                return acc;
+              }, {}),
+            });
+          });
         });
-      });
-    });
+    },
+  );
 };

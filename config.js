@@ -9,7 +9,7 @@ module.exports = {
   disqusShortname: '',
   postsPerPage: 4,
   googleAnalyticsId: 'UA-135128268-2',
-  menu: [
+  routes: [
     {
       label: 'Articles',
       path: '/',
