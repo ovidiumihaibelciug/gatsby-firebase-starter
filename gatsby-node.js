@@ -34,12 +34,12 @@ exports.createPages = async ({ graphql, actions }) => {
         .get()
         .then(querySnapshot => {
           querySnapshot.docs.forEach(item => {
-            const post = item.data();
+            const itemData = item.data();
             createPage({
-              path: `${routePath}/${post[slug]}`,
+              path: `${routePath}/${itemData[slug]}`,
               component: Template,
               context: context.reduce((acc, curr) => {
-                acc[curr] = post[curr];
+                acc[curr] = itemData[curr];
                 return acc;
               }, {}),
             });
