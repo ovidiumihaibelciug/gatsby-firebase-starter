@@ -31,11 +31,13 @@ class Layout extends Component {
   }
 }
 
-const AppWithAuthentication = withAuthentication(({ children }) => (
-  <Fragment>
-    <Navigation />
-    {children}
-  </Fragment>
-));
+const AppWithAuthentication = withAuthentication(
+  ({ hideNav, children }) => (
+    <Fragment>
+      {!hideNav && <Navigation />}
+      {children}
+    </Fragment>
+  ),
+);
 
 export default Layout;

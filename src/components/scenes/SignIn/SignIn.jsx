@@ -10,13 +10,25 @@ import PasswordForgetLink from '../../molecules/PasswordForget/atoms/PasswordFor
 export class SignIn extends Component {
   render() {
     return (
-      <div>
-        <SignInForm />
-        <SignInGoogle />
-        <SignInFacebook />
-        <SignInTwitter />
-        <PasswordForgetLink />
-        <SignUpLink />
+      <div className="login">
+        <div className="login__content">
+          <div className="login__content__title">Log in</div>
+          <div className="login__content__form">
+            <SignInForm />
+          </div>
+          <div className="login__content__password-forget">
+            <PasswordForgetLink />
+          </div>
+          <div className="login__content__providers">
+            <SignInGoogle />
+            <SignInFacebook />
+            <SignInTwitter />
+          </div>
+          <div className="login__content__register">
+            <SignUpLink />
+          </div>
+        </div>
+        <div className="login__image" />
       </div>
     );
   }

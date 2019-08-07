@@ -27,7 +27,6 @@ export class Home extends Component {
       .posts()
       .get()
       .then(querySnapshot => {
-        console.log(querySnapshot.docs);
         const data = querySnapshot.docs.map(item => item.data());
         this.setState({
           posts: data,
@@ -48,8 +47,6 @@ export class Home extends Component {
     e.preventDefault();
     const { title, description } = this.state;
     const { firebase } = this.props;
-
-    console.log('asdasd');
 
     firebase.posts().add({
       title,

@@ -1,16 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Layout from '../utils/layout';
 import SignIn from '../components/scenes/SignIn/SignIn';
 
 const SignInPage = () => (
-  <Fragment>
-    <h1>SignIn</h1>
+  <Layout hideNav>
     <SignIn />
-  </Fragment>
-);
-
-export default () => (
-  <Layout>
-    <SignInPage />
   </Layout>
 );
+
+export default SignInPage;

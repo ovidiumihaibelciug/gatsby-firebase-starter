@@ -71,7 +71,6 @@ class SignInForm extends Component {
 
     return (
       <>
-        <button onClick={this.testFirebase}>asd</button>
         <form onSubmit={this.onSubmit}>
           <input
             name="email"
