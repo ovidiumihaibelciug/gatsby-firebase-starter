@@ -72,22 +72,38 @@ class SignInForm extends Component {
     return (
       <>
         <form onSubmit={this.onSubmit}>
-          <input
-            name="email"
-            value={email}
-            onChange={this.onChange}
-            type="text"
-            placeholder="Email Address"
-          />
-          <input
-            name="password"
-            value={password}
-            onChange={this.onChange}
-            type="password"
-            placeholder="Password"
-          />
-          <button disabled={isInvalid} type="submit">
-            Sign In
+          <div className="group">
+            <input
+              name="email"
+              value={email}
+              onChange={this.onChange}
+              type="text"
+              required
+            />
+            <span className="highlight" />
+            <span className="bar" />
+            <label>Email</label>
+          </div>
+
+          <div className="group group__password">
+            <input
+              name="password"
+              value={password}
+              onChange={this.onChange}
+              type="password"
+              required
+            />
+            <span className="highlight" />
+            <span className="bar" />
+            <label>Password</label>
+          </div>
+          <button
+            disabled={isInvalid}
+            type="submit"
+            className="btn"
+            type="button"
+          >
+            <span>Button</span>
           </button>
 
           {error && <p>{error.message}</p>}
