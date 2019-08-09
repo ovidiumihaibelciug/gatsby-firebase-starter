@@ -5,7 +5,12 @@
   &__image {
     flex: 3;
     background-color: red;
-    background: url('https://cdn.pixabay.com/photo/2017/01/17/03/57/desktop-1985856_960_720.jpg');
+    background-image: linear-gradient(
+        rgba(red, 0.7) 10%,
+        rgba(blue, 0.7) 100%
+      ),
+      url('https://cdn.pixabay.com/photo/2017/01/17/03/57/desktop-1985856_960_720.jpg');
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
