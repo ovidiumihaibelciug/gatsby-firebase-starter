@@ -121,6 +121,25 @@
         margin: 0 20px;
       }
     }
+    &__password-forget {
+      a {
+        color: rgba(black, 0.9);
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $color-main;
+        }
+      }
+    }
+    &__register {
+      a {
+        color: rgba(black, 0.9);
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $color-main;
+        }
+      }
+    }
     &__login-form {
       width: 100%;
       display: flex;
@@ -146,7 +165,7 @@
       &__title {
         font-size: 2.5rem;
         font-weight: 600;
-        color: #302b63;
+        color: $color-main;
         margin-bottom: 30px;
         text-align: center;
       }
@@ -203,7 +222,7 @@ input:focus ~ label,
 input:valid ~ label {
   top: -20px;
   font-size: 14px;
-  color: #5264ae;
+  color: $color-main;
 }
 
 /* BOTTOM BARS ================================= */
@@ -219,7 +238,7 @@ input:valid ~ label {
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: #5264ae;
+  background: $color-main;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -258,7 +277,7 @@ input:focus ~ .highlight {
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
   from {
-    background: #5264ae;
+    background: $color-main;
   }
   to {
     width: 0;
@@ -267,7 +286,7 @@ input:focus ~ .highlight {
 }
 @-moz-keyframes inputHighlighter {
   from {
-    background: #5264ae;
+    background: $color-main;
   }
   to {
     width: 0;
@@ -276,7 +295,7 @@ input:focus ~ .highlight {
 }
 @keyframes inputHighlighter {
   from {
-    background: #5264ae;
+    background: $color-main;
   }
   to {
     width: 0;
@@ -297,9 +316,9 @@ input:focus ~ .highlight {
   border-width: 0;
   outline: none;
   border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 
-  background-color: #302b63;
+  background-color: $color-main;
   color: #ecf0f1;
 
   transition: background-color 0.3s;
