@@ -103,7 +103,7 @@ class SignInForm extends Component {
             className="btn"
             type="button"
           >
-            <span>Button</span>
+            <span>Log in</span>
           </button>
 
           {error && <p>{error.message}</p>}

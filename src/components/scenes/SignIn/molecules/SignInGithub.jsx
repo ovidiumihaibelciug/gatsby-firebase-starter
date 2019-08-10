@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-
 import { navigate } from 'gatsby';
 
 import { withFirebase } from '../../../../utils/Firebase';
 import * as ROUTES from '../../../../constants/routes';
-
-import { FaGoogle } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 
 const ERROR_CODE_ACCOUNT_EXISTS =
   'auth/account-exists-with-different-credential';
@@ -17,7 +15,7 @@ const ERROR_MSG_ACCOUNT_EXISTS = `
   your personal account page.
 `;
 
-class SignInGoogle extends Component {
+class SignInGithub extends Component {
   constructor(props) {
     super(props);
 
@@ -26,12 +24,12 @@ class SignInGoogle extends Component {
 
   onSubmit = event => {
     this.props.firebase
-      .doSignInWithGoogle()
+      .doSignInWithFacebook()
       .then(socialAuthUser => {
         // Create a user in your Firebase Realtime Database too
         return this.props.firebase.user(socialAuthUser.user.uid).set({
-          username: socialAuthUser.user.displayName,
-          email: socialAuthUser.user.email,
+          username: socialAuthUser.additionalUserInfo.profile.name,
+          email: socialAuthUser.additionalUserInfo.profile.email,
           roles: {},
         });
       })
@@ -55,11 +53,11 @@ class SignInGoogle extends Component {
 
     return (
       <form
-        className="login__content__providers__item login__content__providers__item--google"
+        className="login__content__providers__item login__content__providers__item--github"
         onSubmit={this.onSubmit}
       >
         <button type="submit">
-          <FaGoogle />
+          <FaGithub />
         </button>
 
         {error && <p>{error.message}</p>}
@@ -68,4 +66,4 @@ class SignInGoogle extends Component {
   }
 }
 
-export default withFirebase(SignInGoogle);
+export default withFirebase(SignInGithub);

@@ -3,6 +3,7 @@ import { navigate } from 'gatsby';
 
 import { withFirebase } from '../../../../utils/Firebase';
 import * as ROUTES from '../../../../constants/routes';
+import { FaTwitter } from 'react-icons/fa';
 
 const ERROR_CODE_ACCOUNT_EXISTS =
   'auth/account-exists-with-different-credential';
@@ -51,8 +52,13 @@ class SignInTwitter extends Component {
     const { error } = this.state;
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Twitter</button>
+      <form
+        className="login__content__providers__item login__content__providers__item--twitter"
+        onSubmit={this.onSubmit}
+      >
+        <button type="submit">
+          <FaTwitter />
+        </button>
 
         {error && <p>{error.message}</p>}
       </form>

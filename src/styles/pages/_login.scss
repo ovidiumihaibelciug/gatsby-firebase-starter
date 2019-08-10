@@ -37,17 +37,72 @@
     flex: 3;
     background-color: #fff;
     z-index: 1;
-    padding: 7% 0;
     display: flex;
     justify-content: center;
     align-items: center;
     &__inner {
-      max-width: 350px;
+      max-width: 400px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
       height: 100%;
+    }
+    &__providers {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      width: 100%;
+      &--left {
+        margin-right: 50px;
+      }
+      & > div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 30px;
+      }
+      &__item {
+        flex: 1;
+        &:first-child {
+          margin-right: 5px;
+        }
+        &:last-child {
+          margin-left: 5px;
+        }
+        button {
+          border: none;
+          width: 100%;
+          height: 100%;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &--google {
+          button {
+            background-color: #cc433d;
+          }
+        }
+        &--facebook {
+          button {
+            background-color: #3a5999;
+          }
+        }
+        &--twitter {
+          button {
+            background-color: #5aa4eb;
+          }
+        }
+
+        &--github {
+          button {
+            background-color: black;
+          }
+        }
+      }
     }
     &__or {
       display: flex;
@@ -56,7 +111,7 @@
       width: 100%;
       margin: 30px 0;
       &__line {
-        height: 1px;
+        height: 1.8px;
         flex: 1;
         width: 100%;
         background-color: #302b63;
@@ -66,21 +121,42 @@
         margin: 0 20px;
       }
     }
+    &__login-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 3;
+    }
     &__form {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      width: 100%;
     }
     > div {
     }
-    &__title {
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #302b63;
-      margin-bottom: 30px;
+    &__header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex: 2;
+      &__title {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #302b63;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      &__logo {
+        height: auto;
+        width: 200px;
+      }
     }
+
     &__form {
-      flex: 1;
       form {
         display: flex;
         flex-direction: column;
@@ -98,9 +174,9 @@
 }
 input {
   font-size: 18px;
-  padding: 10px 10px 10px 5px;
+  padding: 10px 0;
   display: block;
-  width: 320px;
+  width: 100%;
   border: none;
   border-bottom: 1px solid #757575;
 }
@@ -134,7 +210,7 @@ input:valid ~ label {
 .bar {
   position: relative;
   display: block;
-  width: 335px;
+  width: 100%;
 }
 .bar:before,
 .bar:after {
@@ -228,6 +304,7 @@ input:focus ~ .highlight {
 
   transition: background-color 0.3s;
   width: 100%;
+  cursor: pointer;
 }
 
 .btn:hover,
@@ -241,7 +318,7 @@ input:focus ~ .highlight {
 
 .btn span {
   display: block;
-  padding: 12px 24px;
+  padding: 18px 24px;
 }
 
 .btn:before {
