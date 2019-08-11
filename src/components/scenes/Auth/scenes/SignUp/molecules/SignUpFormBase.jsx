@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withFirebase } from '../../../../../../utils/Firebase';
 import * as ROUTES from '../../../../../../constants/routes';
-import * as ROLES from '../../../../../../constants/roles';
 import { navigate } from 'gatsby';
 import Input from '../../../../../atoms/Input';
 
@@ -32,26 +31,14 @@ class SignUpFormBase extends Component {
   }
 
   onSubmit = event => {
-    const { username, email, passwordOne, isAdmin } = this.state;
-    const roles = {};
+    const { username, email, passwordOne } = this.state;
 
-    if (isAdmin) {
-      roles[ROLES.ADMIN] = ROLES.ADMIN;
-    }
+    console.log('test');
+
+    console.log('asd', this.props.firebase);
 
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
-      .then(authUser => {
-        // Create a user in your Firebase realtime database
-        return this.props.firebase.user(authUser.user.uid).set({
-          username,
-          email,
-          roles,
-        });
-      })
-      .then(() => {
-        return this.props.firebase.doSendEmailVerification();
-      })
       .then(() => {
         this.setState({ ...INITIAL_STATE });
         navigate(ROUTES.HOME);
@@ -81,7 +68,6 @@ class SignUpFormBase extends Component {
       email,
       passwordOne,
       passwordTwo,
-      isAdmin,
       error,
     } = this.state;
 
@@ -92,7 +78,7 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <div>
         <Input
           name="username"
           value={username}
@@ -134,13 +120,14 @@ class SignUpFormBase extends Component {
           disabled={isInvalid}
           type="submit"
           className="btn"
-          type="button"
+          type="submit"
+          onClick={this.onSubmit}
         >
           <span>Sign Up</span>
         </button>
 
         {error && <p>{error.message}</p>}
-      </form>
+      </div>
     );
   }
 }
