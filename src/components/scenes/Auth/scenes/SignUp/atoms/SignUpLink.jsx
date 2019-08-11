@@ -2,9 +2,19 @@ import React from 'react';
 import * as ROUTES from '../../../../../../constants/routes';
 import { Link } from 'gatsby';
 
-const SignUpLink = () => (
+const SignUpLink = ({ isRegister }) => (
   <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    {isRegister ? (
+      <>
+        Don't have an account?{' '}
+        <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+      </>
+    ) : (
+      <>
+        Already have an account?{' '}
+        <Link to={ROUTES.SIGN_IN}>Sign in</Link>
+      </>
+    )}
   </p>
 );
 

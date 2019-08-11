@@ -9,7 +9,7 @@ const SignUpPage = () => (
 );
 
 export default () => (
-  <Layout>
-    <SignUpPage />
-  </Layout>
+  // <Layout>
+  <SignUpPage />
+  // </Layout>
 );

@@ -47,7 +47,7 @@ export class SignIn extends Component {
               </div>
             </div>
             <div className="login__content__register">
-              <SignUpLink />
+              <SignUpLink isRegister />
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { navigate } from 'gatsby';
 
 import { withFirebase } from '../../../../../utils/Firebase';
 import * as ROUTES from '../../../../../constants/routes';
+import Input from '../../../../atoms/Input';
 
 const INITIAL_STATE = {
   email: '',
@@ -72,31 +73,25 @@ class SignInForm extends Component {
     return (
       <>
         <form onSubmit={this.onSubmit}>
-          <div className="group">
-            <input
-              name="email"
-              value={email}
-              onChange={this.onChange}
-              type="text"
-              required
-            />
-            <span className="highlight" />
-            <span className="bar" />
-            <label>Email</label>
-          </div>
+          <Input
+            name="email"
+            value={email}
+            onChange={this.onChange}
+            type="text"
+            labelName="Email"
+            required
+          />
 
-          <div className="group group__password">
-            <input
-              name="password"
-              value={password}
-              onChange={this.onChange}
-              type="password"
-              required
-            />
-            <span className="highlight" />
-            <span className="bar" />
-            <label>Password</label>
-          </div>
+          <Input
+            name="password"
+            value={password}
+            onChange={this.onChange}
+            type="password"
+            labelName="Password"
+            className="input--no-margin"
+            required
+          />
+
           <button
             disabled={isInvalid}
             type="submit"

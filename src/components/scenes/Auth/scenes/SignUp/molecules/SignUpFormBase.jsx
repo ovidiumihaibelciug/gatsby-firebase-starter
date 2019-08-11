@@ -3,6 +3,7 @@ import { withFirebase } from '../../../../../../utils/Firebase';
 import * as ROUTES from '../../../../../../constants/routes';
 import * as ROLES from '../../../../../../constants/roles';
 import { navigate } from 'gatsby';
+import Input from '../../../../../atoms/Input';
 
 const INITIAL_STATE = {
   username: '',
@@ -92,45 +93,50 @@ class SignUpFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
+        <Input
           name="username"
           value={username}
           onChange={this.onChange}
           type="text"
-          placeholder="Full Name"
+          required={true}
+          labelName="Username"
         />
-        <input
+
+        <Input
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
-          placeholder="Email Address"
+          required={true}
+          labelName="Email"
         />
-        <input
+
+        <Input
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
-          placeholder="Password"
+          required={true}
+          labelName="Password"
         />
-        <input
+
+        <Input
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
-          placeholder="Confirm Password"
+          required={true}
+          labelName="Confirm Password"
+          className="input--no-margin"
         />
-        <label>
-          Admin:
-          <input
-            name="isAdmin"
-            type="checkbox"
-            checked={isAdmin}
-            onChange={this.onChangeCheckbox}
-          />
-        </label>
-        <button disabled={isInvalid} type="submit">
-          Sign Up
+
+        <button
+          disabled={isInvalid}
+          type="submit"
+          className="btn"
+          type="button"
+        >
+          <span>Sign Up</span>
         </button>
 
         {error && <p>{error.message}</p>}
