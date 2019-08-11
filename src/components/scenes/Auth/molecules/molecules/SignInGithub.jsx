@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { navigate } from 'gatsby';
 
-import { withFirebase } from '../../../../utils/Firebase';
-import * as ROUTES from '../../../../constants/routes';
-import { FaTwitter } from 'react-icons/fa';
+import { withFirebase } from '../../../../../utils/Firebase';
+import * as ROUTES from '../../../../../constants/routes';
+import { FaGithub } from 'react-icons/fa';
 
 const ERROR_CODE_ACCOUNT_EXISTS =
   'auth/account-exists-with-different-credential';
@@ -15,7 +15,7 @@ const ERROR_MSG_ACCOUNT_EXISTS = `
   your personal account page.
 `;
 
-class SignInTwitter extends Component {
+class SignInGithub extends Component {
   constructor(props) {
     super(props);
 
@@ -24,7 +24,7 @@ class SignInTwitter extends Component {
 
   onSubmit = event => {
     this.props.firebase
-      .doSignInWithTwitter()
+      .doSignInWithFacebook()
       .then(socialAuthUser => {
         // Create a user in your Firebase Realtime Database too
         return this.props.firebase.user(socialAuthUser.user.uid).set({
@@ -53,11 +53,11 @@ class SignInTwitter extends Component {
 
     return (
       <form
-        className="login__content__providers__item login__content__providers__item--twitter"
+        className="login__content__providers__item login__content__providers__item--github"
         onSubmit={this.onSubmit}
       >
         <button type="submit">
-          <FaTwitter />
+          <FaGithub />
         </button>
 
         {error && <p>{error.message}</p>}
@@ -66,4 +66,4 @@ class SignInTwitter extends Component {
   }
 }
 
-export default withFirebase(SignInTwitter);
+export default withFirebase(SignInGithub);

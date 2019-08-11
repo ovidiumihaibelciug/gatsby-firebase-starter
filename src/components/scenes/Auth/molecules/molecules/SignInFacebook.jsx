@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { navigate } from 'gatsby';
 
-import { withFirebase } from '../../../../utils/Firebase';
-import * as ROUTES from '../../../../constants/routes';
-import { FaGithub } from 'react-icons/fa';
+import { withFirebase } from '../../../../../utils/Firebase';
+import * as ROUTES from '../../../../../constants/routes';
+import { FaFacebookF } from 'react-icons/fa';
 
 const ERROR_CODE_ACCOUNT_EXISTS =
   'auth/account-exists-with-different-credential';
@@ -15,7 +15,7 @@ const ERROR_MSG_ACCOUNT_EXISTS = `
   your personal account page.
 `;
 
-class SignInGithub extends Component {
+class SignInFacebook extends Component {
   constructor(props) {
     super(props);
 
@@ -53,11 +53,11 @@ class SignInGithub extends Component {
 
     return (
       <form
-        className="login__content__providers__item login__content__providers__item--github"
+        className="login__content__providers__item login__content__providers__item--facebook"
         onSubmit={this.onSubmit}
       >
         <button type="submit">
-          <FaGithub />
+          <FaFacebookF />
         </button>
 
         {error && <p>{error.message}</p>}
@@ -66,4 +66,4 @@ class SignInGithub extends Component {
   }
 }
 
-export default withFirebase(SignInGithub);
+export default withFirebase(SignInFacebook);

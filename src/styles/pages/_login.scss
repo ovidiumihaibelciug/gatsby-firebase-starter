@@ -79,27 +79,40 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          cursor: pointer;
         }
 
         &--google {
           button {
             background-color: #cc433d;
+            &:hover {
+              background-color: rgba(#cc433d, 0.9);
+            }
           }
         }
         &--facebook {
           button {
             background-color: #3a5999;
+            &:hover {
+              background-color: rgba(#3a5999, 0.9);
+            }
           }
         }
         &--twitter {
           button {
             background-color: #5aa4eb;
+            &:hover {
+              background-color: rgba(#5aa4eb, 0.9);
+            }
           }
         }
 
         &--github {
           button {
             background-color: black;
+            &:hover {
+              background-color: rgba(black, 0.9);
+            }
           }
         }
       }

@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react';
 import Layout from '../utils/layout';
-import SignUp from '../components/scenes/SignUp/SignUp';
+import SignUp from '../components/scenes/Auth/scenes/SignUp/SignUp';
 
 const SignUpPage = () => (
   <Fragment>
-    <h1>SignUp</h1>
     <SignUp />
   </Fragment>
 );
