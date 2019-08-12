@@ -12,5 +12,11 @@ module.exports = {
     menu: siteConfig.menu,
     author: siteConfig.author,
   },
-  plugins: [`gatsby-plugin-sass`],
+  plugins: [
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/post/*`] },
+    },
+  ],
 };
