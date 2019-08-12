@@ -1,0 +1,13 @@
+.signout-btn {
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  padding: 5px;
+  padding-right: 0;
+  &:hover {
+    color: rgba(white, 0.8);
+  }
+}

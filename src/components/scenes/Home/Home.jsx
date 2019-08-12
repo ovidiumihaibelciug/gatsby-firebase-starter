@@ -67,7 +67,9 @@ export class Home extends Component {
     if (loading) return null;
 
     return (
-      <div>
+      <div className="home">
+        <h1>Home Page</h1>
+        <p>The Home Page is accessible by every signed in user.</p>
         <form onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="title">Title</label>
