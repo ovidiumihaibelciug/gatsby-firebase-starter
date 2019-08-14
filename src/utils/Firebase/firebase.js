@@ -28,7 +28,6 @@ class Firebase {
     this.db = app.firestore();
     this.functions = app.functions();
 
-    console.log(app);
     /* Social Sign In Method Provider */
 
     this.googleProvider = new app.auth.GoogleAuthProvider();
