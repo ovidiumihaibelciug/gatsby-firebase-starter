@@ -46,8 +46,14 @@ export class Home extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { title, description } = this.state;
+    const { title, description, posts } = this.state;
     const { firebase } = this.props;
+
+    const newPosts = [{ title, description }, ...posts];
+
+    this.setState({
+      posts: newPosts,
+    });
 
     firebase.posts().add({
       title,
@@ -100,7 +106,6 @@ export class Home extends Component {
               <button
                 type="submit"
                 className="btn home__posts__form__btn"
-                type="button"
               >
                 <span>Submit</span>
               </button>
