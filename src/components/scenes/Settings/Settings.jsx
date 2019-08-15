@@ -19,7 +19,10 @@ export class Account extends Component {
               <h1>Account: {authUser.email}</h1>
               <PasswordForgetForm />
               <PasswordChangeForm />
-              <LoginManagement authUser={authUser} />
+              <LoginManagement
+                className="settings__login-management"
+                authUser={authUser}
+              />
             </div>
           )}
         </AuthUserContext.Consumer>

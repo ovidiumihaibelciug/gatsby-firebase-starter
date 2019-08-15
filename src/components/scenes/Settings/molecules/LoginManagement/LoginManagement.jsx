@@ -89,10 +89,11 @@ class LoginManagement extends Component {
 
   render() {
     const { activeSignInMethods, error } = this.state;
+    const { className } = this.props;
 
     return (
-      <div>
-        Sign In Methods:
+      <div className={className}>
+        <p>Sign In Methods:</p>
         <ul>
           {SIGN_IN_METHODS.map(signInMethod => {
             const onlyOneLeft = activeSignInMethods.length === 1;
