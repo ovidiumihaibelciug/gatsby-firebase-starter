@@ -26,13 +26,18 @@
     align-items: center;
   }
   &__link {
-    &:not(:first-child) {
-      margin: 0 10px;
+    margin: 0 10px;
+    &:first-child {
+      margin-left: 0;
     }
 
     a {
       text-decoration: none;
       color: white;
+      transition: all 0.1s ease-in-out;
+      &:hover {
+        color: rgba(white, 0.8);
+      }
     }
   }
 }
