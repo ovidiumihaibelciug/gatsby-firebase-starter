@@ -93,8 +93,8 @@ class LoginManagement extends Component {
 
     return (
       <div className={className}>
-        <p>Sign In Methods:</p>
-        <ul>
+        <p>Sign In Methods</p>
+        <div>
           {SIGN_IN_METHODS.map(signInMethod => {
             const onlyOneLeft = activeSignInMethods.length === 1;
             const isEnabled = activeSignInMethods.includes(
@@ -113,7 +113,7 @@ class LoginManagement extends Component {
               </div>
             );
           })}
-        </ul>
+        </div>
         {error && error.message}
       </div>
     );

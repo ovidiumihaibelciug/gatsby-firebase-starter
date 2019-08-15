@@ -17,8 +17,8 @@ export class Account extends Component {
           {authUser => (
             <div>
               <h1>Account: {authUser.email}</h1>
-              <PasswordForgetForm />
-              <PasswordChangeForm />
+              <PasswordForgetForm className="settings__password-forget" />
+              <PasswordChangeForm className="settings__password-change" />
               <LoginManagement
                 className="settings__login-management"
                 authUser={authUser}

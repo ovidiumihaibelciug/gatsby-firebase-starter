@@ -8,9 +8,10 @@ const PasswordChangeForm = ({
   passwordTwo,
   onSubmit,
   onChange,
+  className,
 }) => {
   return (
-    <form onSubmit={e => onSubmit(e)}>
+    <form className={className} onSubmit={e => onSubmit(e)}>
       <Input
         name="passwordOne"
         value={passwordOne}

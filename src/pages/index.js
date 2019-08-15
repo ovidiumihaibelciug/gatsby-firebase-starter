@@ -1,13 +1,10 @@
 import React, { Fragment } from 'react';
 import Layout from '../utils/layout';
+import Landing from '../components/scenes/Landing/Landing';
 
 const LandingPage = () => (
   <Fragment>
-    <h1>Landing</h1>
-    <p>
-      The Landing Page is open to everyone, even though the user isn't
-      signed in.
-    </p>
+    <Landing />
   </Fragment>
 );
 

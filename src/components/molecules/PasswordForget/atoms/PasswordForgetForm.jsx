@@ -7,9 +7,10 @@ const PasswordForgetForm = ({
   isInvalid,
   error,
   email,
+  className,
 }) => {
   return (
-    <form onSubmit={onSubmit}>
+    <form className={className} onSubmit={onSubmit}>
       <Input
         name="email"
         value={email}
