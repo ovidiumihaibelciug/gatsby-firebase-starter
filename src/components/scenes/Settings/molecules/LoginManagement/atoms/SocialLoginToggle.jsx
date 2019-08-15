@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 const SocialLoginToggle = ({
   onlyOneLeft,
@@ -7,20 +8,16 @@ const SocialLoginToggle = ({
   onLink,
   onUnlink,
 }) =>
-  isEnabled ? (
+  !isEnabled && (
     <button
       type="button"
-      onClick={() => onUnlink(signInMethod.id)}
-      disabled={onlyOneLeft}
-    >
-      Deactivate {signInMethod.id}
-    </button>
-  ) : (
-    <button
-      type="button"
+      className={classNames(
+        'provider',
+        `provider--${signInMethod.name}`,
+      )}
       onClick={() => onLink(signInMethod.provider)}
     >
-      Link {signInMethod.id}
+      {<signInMethod.Icon />}
     </button>
   );
 
