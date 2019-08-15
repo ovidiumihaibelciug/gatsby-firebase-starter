@@ -1,4 +1,5 @@
 import React from 'react';
+import Input from '../../../atoms/Input';
 
 const PasswordChangeForm = ({
   isInvalid,
@@ -10,22 +11,24 @@ const PasswordChangeForm = ({
 }) => {
   return (
     <form onSubmit={e => onSubmit(e)}>
-      <input
+      <Input
         name="passwordOne"
         value={passwordOne}
         onChange={e => onChange(e)}
         type="password"
-        placeholder="New Password"
+        labelName="New Password"
+        required
       />
-      <input
+      <Input
         name="passwordTwo"
         value={passwordTwo}
         onChange={e => onChange(e)}
         type="password"
-        placeholder="Confirm New Password"
+        labelName="Confirm New Password"
+        required
       />
-      <button disabled={isInvalid} type="submit">
-        Reset My Password
+      <button disabled={isInvalid} type="submit" className="btn">
+        <span>Reset My Password</span>
       </button>
 
       {error && <p>{error.message}</p>}

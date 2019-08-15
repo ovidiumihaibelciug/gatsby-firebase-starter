@@ -12,7 +12,7 @@ import LoginManagement from './molecules/LoginManagement/LoginManagement';
 export class Account extends Component {
   render() {
     return (
-      <div className="account">
+      <div className="settings">
         <AuthUserContext.Consumer>
           {authUser => (
             <div>

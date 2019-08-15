@@ -67,18 +67,6 @@ class LoginManagement extends Component {
       .catch(error => this.setState({ error }));
   };
 
-  onDefaultLoginLink = password => {
-    const credential = this.props.firebase.emailAuthProvider.credential(
-      this.props.authUser.email,
-      password,
-    );
-
-    this.props.firebase.auth.currentUser
-      .linkAndRetrieveDataWithCredential(credential)
-      .then(this.fetchSignInMethods)
-      .catch(error => this.setState({ error }));
-  };
-
   onUnlink = providerId => {
     this.props.firebase.auth.currentUser
       .unlink(providerId)
@@ -100,25 +88,15 @@ class LoginManagement extends Component {
             );
 
             return (
-              <li key={signInMethod.id}>
-                {signInMethod.id === 'password' ? (
-                  <DefaultLoginToggle
-                    onlyOneLeft={onlyOneLeft}
-                    isEnabled={isEnabled}
-                    signInMethod={signInMethod}
-                    onLink={this.onDefaultLoginLink}
-                    onUnlink={this.onUnlink}
-                  />
-                ) : (
-                  <SocialLoginToggle
-                    onlyOneLeft={onlyOneLeft}
-                    isEnabled={isEnabled}
-                    signInMethod={signInMethod}
-                    onLink={this.onSocialLoginLink}
-                    onUnlink={this.onUnlink}
-                  />
-                )}
-              </li>
+              <div key={signInMethod.id}>
+                <SocialLoginToggle
+                  onlyOneLeft={onlyOneLeft}
+                  isEnabled={isEnabled}
+                  signInMethod={signInMethod}
+                  onLink={this.onSocialLoginLink}
+                  onUnlink={this.onUnlink}
+                />
+              </div>
             );
           })}
         </ul>

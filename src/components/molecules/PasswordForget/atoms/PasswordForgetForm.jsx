@@ -1,4 +1,5 @@
 import React from 'react';
+import Input from '../../../atoms/Input';
 
 const PasswordForgetForm = ({
   onSubmit,
@@ -9,15 +10,17 @@ const PasswordForgetForm = ({
 }) => {
   return (
     <form onSubmit={onSubmit}>
-      <input
+      <Input
         name="email"
         value={email}
         onChange={onChange}
+        labelName="Email Address"
         type="text"
-        placeholder="Email Address"
+        required
       />
-      <button disabled={isInvalid} type="submit">
-        Reset My Password
+
+      <button disabled={isInvalid} type="submit" className="btn">
+        <span>Reset My Password</span>
       </button>
 
       {error && <p>{error.message}</p>}

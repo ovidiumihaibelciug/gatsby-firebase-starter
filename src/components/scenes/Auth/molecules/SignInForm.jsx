@@ -92,12 +92,7 @@ class SignInForm extends Component {
             required
           />
 
-          <button
-            disabled={isInvalid}
-            type="submit"
-            className="btn"
-            type="button"
-          >
+          <button disabled={isInvalid} type="submit" className="btn">
             <span>Log in</span>
           </button>
 

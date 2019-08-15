@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Input from '../../../../../atoms/Input';
 
 class DefaultLoginToggle extends Component {
   constructor(props) {
@@ -41,23 +42,31 @@ class DefaultLoginToggle extends Component {
       </button>
     ) : (
       <form onSubmit={this.onSubmit}>
-        <input
+        <Input
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
-          placeholder="New Password"
+          labelName="New password"
+          required
         />
-        <input
+        <Input
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
-          placeholder="Confirm New Password"
+          labelName="Confirm New password"
+          required
         />
 
-        <button disabled={isInvalid} type="submit">
-          Link {signInMethod.id}
+        <button
+          disabled={isInvalid}
+          type="submit"
+          className="btn"
+          type="submit"
+          onClick={this.onSubmit}
+        >
+          <span>Link {signInMethod.id}</span>
         </button>
       </form>
     );
