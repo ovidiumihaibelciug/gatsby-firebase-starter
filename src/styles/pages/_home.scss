@@ -1,3 +1,69 @@
 .home {
   margin: 0 50px;
+  &__details {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+  }
+  &__title {
+    margin-bottom: 5px;
+  }
+
+  &__posts {
+    &__form {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      &__title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+      &__btn {
+        width: 30%;
+        margin: 0;
+        margin-bottom: 30px;
+      }
+    }
+    &__items {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      flex-wrap: wrap;
+    }
+  }
+  &__post {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 250px;
+    &:hover {
+      cursor: pointer;
+
+      .home__post__title {
+        color: $color-main;
+      }
+    }
+    &__image {
+      flex: 4;
+      background: url('http://stayregular.net/content/2-blog/20180416-deploy-a-static-react-blog-using-gatsbyjs-and-github/gatsbyjs-deploy-blog%400.5x.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+    &__text {
+      flex: 2;
+      margin-top: 20px;
+      height: auto;
+    }
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #2b2b2b;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+    &__description {
+      color: #8f8289;
+    }
+  }
 }

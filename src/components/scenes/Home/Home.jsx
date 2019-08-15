@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import { withFirebase } from '../../../utils/Firebase';
+import Input from '../../atoms/Input';
 
 export class Home extends Component {
   _initFirebase = false;
@@ -68,38 +69,64 @@ export class Home extends Component {
 
     return (
       <div className="home">
-        <h1>Home Page</h1>
-        <p>The Home Page is accessible by every signed in user.</p>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="title">Title</label>
-            <input
-              name="title"
-              type="text"
-              onChange={this.handleChange}
-              value={title}
-            />
+        <div className="home__details">
+          <h1 className="home__title">Home Page</h1>
+          <p className="home__description">
+            The Home Page is accessible by every signed in user.
+          </p>
+        </div>
+
+        <div className="home__posts">
+          <div className="home__posts__form">
+            <div className="home__posts__form__title">Add Posts</div>
+            <form onSubmit={this.handleSubmit}>
+              <Input
+                name="title"
+                type="text"
+                value={title}
+                labelName="Title"
+                onChange={this.handleChange}
+                required
+              />
+              <Input
+                name="description"
+                type="text"
+                value={description}
+                labelName="Description"
+                onChange={this.handleChange}
+                required
+              />
+
+              <button
+                type="submit"
+                className="btn home__posts__form__btn"
+                type="button"
+              >
+                <span>Submit</span>
+              </button>
+            </form>
           </div>
-          <div>
-            <label htmlFor="description">Description</label>
-            <textarea
-              name="description"
-              cols="30"
-              rows="10"
-              onChange={this.handleChange}
-              value={description}
-            />
+
+          <div className="home__posts__items">
+            {posts.map((item, id) => (
+              <div className="home__post">
+                <div className="home__post__image" />
+                <div className="home__post__text">
+                  <Link
+                    className="home__post__title"
+                    to={'/post/' + item.title}
+                    key={id}
+                  >
+                    {item.title}
+                  </Link>
+                  <div className="home__post__description" key={id}>
+                    {item.description}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-          <button type="submit">Submit</button>
-        </form>
-        {posts.map((item, id) => (
-          <div>
-            <Link to={'/post/' + item.title} key={id}>
-              {item.title}
-            </Link>
-            <div key={id}>{item.description}</div>
-          </div>
-        ))}
+        </div>
       </div>
     );
   }
