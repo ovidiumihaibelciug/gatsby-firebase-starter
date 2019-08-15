@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import SignUpFormBase from './molecules/SignUpFormBase';
-import SignInGoogle from '../../molecules/molecules/SignInGoogle';
-import SignInFacebook from '../../molecules/molecules/SignInFacebook';
-import SignInTwitter from '../../molecules/molecules/SignInTwitter';
+import SignInGoogle from '../../molecules/SignInGoogle';
+import SignInFacebook from '../../molecules/SignInFacebook';
+import SignInTwitter from '../../molecules/SignInTwitter';
 import SignUpLink from '../../scenes/SignUp/atoms/SignUpLink';
-import PasswordForgetLink from '../../../../molecules/PasswordForget/atoms/PasswordForgetLink';
-import SignInGithub from '../../molecules/molecules/SignInGithub';
+import SignInGithub from '../../molecules/SignInGithub';
 
 export class SignUp extends Component {
   render() {

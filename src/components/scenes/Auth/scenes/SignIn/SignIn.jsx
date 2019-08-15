@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import SignInForm from '../../molecules/molecules/SignInForm';
-import SignInGoogle from '../../molecules/molecules/SignInGoogle';
-import SignInFacebook from '../../molecules/molecules/SignInFacebook';
-import SignInTwitter from '../../molecules/molecules/SignInTwitter';
+import SignInForm from '../../molecules/SignInForm';
+import SignInGoogle from '../../molecules/SignInGoogle';
+import SignInFacebook from '../../molecules/SignInFacebook';
+import SignInTwitter from '../../molecules/SignInTwitter';
 import SignUpLink from '../../scenes/SignUp/atoms/SignUpLink';
 import PasswordForgetLink from '../../../../molecules/PasswordForget/atoms/PasswordForgetLink';
-import SignInGithub from '../../molecules/molecules/SignInGithub';
+import SignInGithub from '../../molecules/SignInGithub';
 
 export class SignIn extends Component {
   render() {

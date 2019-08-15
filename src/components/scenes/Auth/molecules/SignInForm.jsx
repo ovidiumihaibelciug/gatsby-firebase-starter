@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import { navigate } from 'gatsby';
 
-import { withFirebase } from '../../../../../utils/Firebase';
-import * as ROUTES from '../../../../../constants/routes';
-import Input from '../../../../atoms/Input';
+import { withFirebase } from '../../../../utils/Firebase';
+import * as ROUTES from '../../../../constants/routes';
+import Input from '../../../atoms/Input';
 
 const INITIAL_STATE = {
   email: '',
