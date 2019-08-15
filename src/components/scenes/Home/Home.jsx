@@ -53,6 +53,8 @@ export class Home extends Component {
 
     this.setState({
       posts: newPosts,
+      title: '',
+      description: '',
     });
 
     firebase.posts().add({
