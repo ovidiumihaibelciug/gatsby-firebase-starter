@@ -35,11 +35,13 @@ class PasswordForget extends Component {
 
   render() {
     const { email, error } = this.state;
+    const { className } = this.props;
 
     const isInvalid = email === '';
 
     return (
       <PasswordForgetForm
+        className={className}
         onSubmit={this.onSubmit}
         onChange={this.onChange}
         email={email}

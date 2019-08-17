@@ -37,12 +37,14 @@ class PasswordChange extends Component {
 
   render() {
     const { passwordOne, passwordTwo, error } = this.state;
+    const { className } = this.props;
 
     const isInvalid =
       passwordOne !== passwordTwo || passwordOne === '';
 
     return (
       <PasswordChangeForm
+        className={className}
         passwordOne={passwordOne}
         passwordTwo={passwordTwo}
         error={error}
