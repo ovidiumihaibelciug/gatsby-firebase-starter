@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import { compose } from 'recompose';
 import Layout from '../utils/layout';
 
@@ -14,8 +15,28 @@ const HomePage = compose(
   withAuthorization(condition),
 )(Home);
 
-export default () => (
-  <Layout>
-    <HomePage />
-  </Layout>
-);
+export default props => {
+  console.log(props);
+  return (
+    <Layout>
+      <HomePage />
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  query HomeSeo {
+    site {
+      siteMetadata {
+        app {
+          defaultTitle: title
+          titleTemplate
+          defaultDescription: description
+          siteUrl: url
+          defaultImage: image
+          twitterUsername
+        }
+      }
+    }
+  }
+`;
