@@ -18,6 +18,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const app = firebase.initializeApp(config);
 
+  console.log(actions);
+
   routes.forEach(
     async ({
       collection,

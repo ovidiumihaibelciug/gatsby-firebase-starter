@@ -9,12 +9,14 @@ const SEO = ({ title, description, image, pathname, article }) => (
     render={({
       site: {
         siteMetadata: {
-          defaultTitle,
-          titleTemplate,
-          defaultDescription,
-          siteUrl,
-          defaultImage,
-          twitterUsername,
+          app: {
+            defaultTitle,
+            titleTemplate,
+            defaultDescription,
+            siteUrl,
+            defaultImage,
+            twitterUsername,
+          },
         },
       },
     }) => {
@@ -94,12 +96,14 @@ const query = graphql`
   query SEO {
     site {
       siteMetadata {
-        defaultTitle: title
-        titleTemplate
-        defaultDescription: description
-        siteUrl: url
-        defaultImage: image
-        twitterUsername
+        app {
+          defaultTitle: title
+          titleTemplate
+          defaultDescription: description
+          siteUrl: url
+          defaultImage: image
+          twitterUsername
+        }
       }
     }
   }
