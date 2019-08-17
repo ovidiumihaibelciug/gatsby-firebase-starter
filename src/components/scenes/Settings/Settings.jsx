@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import {
-  AuthUserContext,
-  withAuthorization,
-  withEmailVerification,
-} from '../../../utils/Session';
-import { compose } from 'recompose';
-import PasswordForgetForm from '../../molecules/PasswordForget/atoms/PasswordForgetForm';
-import PasswordChangeForm from '../../molecules/PasswordChange/molecules/PasswordChangeForm';
+import { AuthUserContext } from '../../../utils/Session';
+import PasswordForgetForm from '../../molecules/PasswordForget/PasswordForget';
+import PasswordChangeForm from '../../molecules/PasswordChange/PasswordChange';
 import LoginManagement from './molecules/LoginManagement/LoginManagement';
 
 export class Account extends Component {
@@ -31,11 +26,4 @@ export class Account extends Component {
   }
 }
 
-const condition = authUser => !!authUser;
-
-const AccountPage = compose(
-  withEmailVerification,
-  withAuthorization(condition),
-)(Account);
-
-export default AccountPage;
+export default Account;

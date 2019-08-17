@@ -2,14 +2,8 @@ import React, { Fragment } from 'react';
 import Layout from '../utils/layout';
 import SignUp from '../components/scenes/Auth/scenes/SignUp/SignUp';
 
-const SignUpPage = () => (
-  <Fragment>
-    <SignUp />
-  </Fragment>
-);
-
 export default () => (
   <Layout hideNav>
-    <SignUpPage />
+    <SignUp />
   </Layout>
 );

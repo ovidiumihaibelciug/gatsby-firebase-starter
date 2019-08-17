@@ -8,18 +8,11 @@ import {
 } from '../utils/Session';
 import Home from '../components/scenes/Home/Home';
 
-const HomePageBase = () => (
-  <div>
-    <Home />
-  </div>
-);
-
 const condition = authUser => !!authUser;
-
 const HomePage = compose(
   withEmailVerification,
   withAuthorization(condition),
-)(HomePageBase);
+)(Home);
 
 export default () => (
   <Layout>
