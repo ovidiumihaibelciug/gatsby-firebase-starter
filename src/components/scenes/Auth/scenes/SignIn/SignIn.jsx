@@ -8,7 +8,7 @@ import SignUpLink from '../../scenes/SignUp/atoms/SignUpLink';
 import PasswordForgetLink from '../../../../molecules/PasswordForget/atoms/PasswordForgetLink';
 import SignInGithub from '../../molecules/SignInGithub';
 
-export class SignIn extends Component {
+class SignIn extends Component {
   render() {
     return (
       <div className="login">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PasswordChangeForm from '../../molecules/PasswordChange/PasswordChange';
 
-export class PasswordChange extends Component {
+class PasswordChange extends Component {
   render() {
     return (
       <div>

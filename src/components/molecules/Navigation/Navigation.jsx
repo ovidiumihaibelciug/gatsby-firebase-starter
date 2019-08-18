@@ -4,7 +4,7 @@ import { AuthUserContext } from '../../../utils/Session';
 import NavigationAuth from './atoms/NavigationAuth';
 import NavigationNonAuth from './atoms/NavigationNonAuth';
 
-export class Navigation extends Component {
+class Navigation extends Component {
   render() {
     return (
       <AuthUserContext.Consumer>

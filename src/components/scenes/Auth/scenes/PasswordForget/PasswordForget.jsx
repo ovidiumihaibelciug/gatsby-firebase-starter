@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PasswordForgetForm from '../../../../molecules/PasswordForget/PasswordForget';
 
-export class PasswordForget extends Component {
+class PasswordForget extends Component {
   render() {
     return (
       <div>

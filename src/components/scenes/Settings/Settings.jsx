@@ -4,7 +4,7 @@ import PasswordForgetForm from '../../molecules/PasswordForget/PasswordForget';
 import PasswordChangeForm from '../../molecules/PasswordChange/PasswordChange';
 import LoginManagement from './molecules/LoginManagement/LoginManagement';
 
-export class Account extends Component {
+class Account extends Component {
   render() {
     return (
       <div className="settings">

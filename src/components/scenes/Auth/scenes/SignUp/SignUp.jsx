@@ -6,7 +6,7 @@ import SignInTwitter from '../../molecules/SignInTwitter';
 import SignUpLink from '../../scenes/SignUp/atoms/SignUpLink';
 import SignInGithub from '../../molecules/SignInGithub';
 
-export class SignUp extends Component {
+class SignUp extends Component {
   render() {
     return (
       <div className="register">

@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { withFirebase } from '../../../utils/Firebase';
 import Input from '../../atoms/Input';
 
-export class Home extends Component {
+class Home extends Component {
   _initFirebase = false;
 
   state = {

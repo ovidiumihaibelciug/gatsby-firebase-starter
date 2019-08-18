@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withFirebase } from '../../../utils/Firebase';
 
-export class Post extends Component {
+class Post extends Component {
   _initFirebase = false;
 
   state = {
