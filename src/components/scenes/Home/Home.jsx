@@ -21,6 +21,14 @@ export class Home extends Component {
     }
   };
 
+  componentDidMount() {
+    this.firebaseInit();
+  }
+
+  componentDidUpdate() {
+    this.firebaseInit();
+  }
+
   getPosts = () => {
     const { firebase } = this.props;
 
@@ -35,14 +43,6 @@ export class Home extends Component {
         });
       });
   };
-
-  componentDidMount() {
-    this.firebaseInit();
-  }
-
-  componentDidUpdate() {
-    this.firebaseInit();
-  }
 
   handleSubmit = e => {
     e.preventDefault();

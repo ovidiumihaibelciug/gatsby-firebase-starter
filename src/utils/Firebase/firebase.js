@@ -97,6 +97,8 @@ class Firebase {
   users = () => this.db.collection('users');
 
   posts = () => this.db.collection('posts');
+
+  post = post => this.posts().where('title', '==', post.title);
 }
 
 let firebase;

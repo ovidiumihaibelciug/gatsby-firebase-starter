@@ -8,7 +8,9 @@ const NavigationAuth = () => (
     <div className="navbar__inner">
       <div className="navbar__left">
         <div className="navbar__logo">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPQpF9FqbFiuhAohxs9UkTIkkJbAv_IU0cXHRxsKpoFFSgfXC7" />
+          <Link to={ROUTES.LANDING}>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPQpF9FqbFiuhAohxs9UkTIkkJbAv_IU0cXHRxsKpoFFSgfXC7" />
+          </Link>
         </div>
         <div className="navbar__links">
           <div className="navbar__link">
