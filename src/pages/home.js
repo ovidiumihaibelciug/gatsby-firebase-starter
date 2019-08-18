@@ -16,7 +16,6 @@ const HomePage = compose(
 )(Home);
 
 export default props => {
-  console.log(props);
   return (
     <Layout>
       <HomePage />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import * as ROUTES from '../../../../constants/routes';
+import { LANDING, HOME, ACCOUNT } from '../../../../constants/routes';
 import SignOutButton from './SignOutButton';
 
 const NavigationAuth = () => (
@@ -8,19 +8,22 @@ const NavigationAuth = () => (
     <div className="navbar__inner">
       <div className="navbar__left">
         <div className="navbar__logo">
-          <Link to={ROUTES.LANDING}>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPQpF9FqbFiuhAohxs9UkTIkkJbAv_IU0cXHRxsKpoFFSgfXC7" />
+          <Link to={LANDING}>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPQpF9FqbFiuhAohxs9UkTIkkJbAv_IU0cXHRxsKpoFFSgfXC7"
+              alt="logo"
+            />
           </Link>
         </div>
         <div className="navbar__links">
           <div className="navbar__link">
-            <Link to={ROUTES.LANDING}>Landing</Link>
+            <Link to={LANDING}>Landing</Link>
           </div>
           <div className="navbar__link">
-            <Link to={ROUTES.HOME}>Home</Link>
+            <Link to={HOME}>Home</Link>
           </div>
           <div className="navbar__link">
-            <Link to={ROUTES.ACCOUNT}>Account</Link>
+            <Link to={ACCOUNT}>Account</Link>
           </div>
         </div>
       </div>

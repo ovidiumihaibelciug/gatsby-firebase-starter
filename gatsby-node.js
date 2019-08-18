@@ -1,4 +1,4 @@
-const path = require(`path`);
+const path = require('path');
 
 const firebase = require('firebase');
 
@@ -29,39 +29,41 @@ const config = {
   appId: '1:45231235288:web:d6f40793a0d70703',
 };
 
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions;
-//   const app = firebase.initializeApp(config);
-//   console.log('----------------------------');
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  console.log('ACTIONS', actions, createPage);
+  const app = firebase.initializeApp(config);
+  const blogPost = path.resolve(`./src/templates/blog-post.js`);
 
-//   routes.forEach(
-//     async ({
-//       collection,
-//       path: routePath,
-//       slug,
-//       fileName,
-//       context,
-//     }) => {
-//       const Template = path.resolve(`./src/templates/post.js`);
-//       console.log('Template', Template);
+  console.log('----------------------------');
 
-//       await app
-//         .firestore()
-//         .collection(collection)
-//         .get()
-//         .then(async querySnapshot => {
-//           querySnapshot.docs.forEach(async item => {
-//             const itemData = item.data();
-//             await createPage({
-//               path: `${routePath}/${itemData[slug]}`,
-//               component: Template,
-//               context: context.reduce((acc, curr) => {
-//                 acc[curr] = itemData[curr];
-//                 return acc;
-//               }, {}),
-//             });
-//           });
-//         });
-//     },
-//   );
-// };
+  routes.forEach(
+    async ({
+      collection,
+      path: routePath,
+      slug,
+      fileName,
+      context,
+    }) => {
+      console.log('Template', blogPost);
+
+      await app
+        .firestore()
+        .collection(collection)
+        .get()
+        .then(async querySnapshot => {
+          querySnapshot.docs.forEach(async item => {
+            const itemData = item.data();
+            await createPage({
+              path: `${routePath}/${itemData[slug]}`,
+              component: blogPost,
+              context: context.reduce((acc, curr) => {
+                acc[curr] = itemData[curr];
+                return acc;
+              }, {}),
+            });
+          });
+        });
+    },
+  );
+};

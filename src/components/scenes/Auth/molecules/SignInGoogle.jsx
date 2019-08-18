@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { navigate } from 'gatsby';
 
 import { withFirebase } from '../../../../utils/Firebase';
-import * as ROUTES from '../../../../constants/routes';
+import { HOME } from '../../../../constants/routes';
 
 import { FaGoogle } from 'react-icons/fa';
 
@@ -37,7 +37,7 @@ class SignInGoogle extends Component {
       })
       .then(() => {
         this.setState({ error: null });
-        navigate(ROUTES.HOME);
+        navigate(HOME);
       })
       .catch(error => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {

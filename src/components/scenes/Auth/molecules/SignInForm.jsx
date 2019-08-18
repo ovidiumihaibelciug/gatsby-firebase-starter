@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { navigate } from 'gatsby';
 
 import { withFirebase } from '../../../../utils/Firebase';
-import * as ROUTES from '../../../../constants/routes';
+import { HOME } from '../../../../constants/routes';
 import Input from '../../../atoms/Input';
 
 const INITIAL_STATE = {
@@ -48,7 +48,7 @@ class SignInForm extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        navigate(ROUTES.HOME);
+        navigate(HOME);
       })
       .catch(error => {
         this.setState({ error });

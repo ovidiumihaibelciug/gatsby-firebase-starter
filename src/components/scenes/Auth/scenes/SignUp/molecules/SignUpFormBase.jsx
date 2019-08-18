@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withFirebase } from '../../../../../../utils/Firebase';
-import * as ROUTES from '../../../../../../constants/routes';
+import { HOME } from '../../../../../../constants/routes';
 import { navigate } from 'gatsby';
 import Input from '../../../../../atoms/Input';
 
@@ -31,13 +31,13 @@ class SignUpFormBase extends Component {
   }
 
   onSubmit = event => {
-    const { username, email, passwordOne } = this.state;
+    const { email, passwordOne } = this.state;
 
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        navigate(ROUTES.HOME);
+        navigate(HOME);
       })
       .catch(error => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
@@ -116,7 +116,6 @@ class SignUpFormBase extends Component {
           disabled={isInvalid}
           type="submit"
           className="btn"
-          type="submit"
           onClick={this.onSubmit}
         >
           <span>Sign Up</span>

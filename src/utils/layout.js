@@ -4,7 +4,7 @@ import Navigation from '../components/molecules/Navigation/Navigation';
 import getFirebase, { FirebaseContext } from './Firebase';
 import withAuthentication from './Session/withAuthentication';
 import SEO from './SEO';
-import '../styles/index.scss';
+// import '../styles/index.scss';
 
 class Layout extends Component {
   state = {

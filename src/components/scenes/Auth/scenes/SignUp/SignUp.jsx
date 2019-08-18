@@ -17,6 +17,7 @@ class SignUp extends Component {
               <img
                 className="register__content__header__logo"
                 src="https://user-images.githubusercontent.com/21834/34442516-fb1a1a3c-ecc2-11e7-8fe8-530435f22336.jpg"
+                alt="logo"
               />
               <div className="register__content__header__title">
                 Gatsby + Firebase Starter

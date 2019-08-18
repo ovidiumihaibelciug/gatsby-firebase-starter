@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import * as ROUTES from '../../../../constants/routes';
+import { LANDING, SIGN_IN } from '../../../../constants/routes';
 
 const NavigationNonAuth = () => (
   <ul>
     <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
+      <Link to={LANDING}>Landing</Link>
     </li>
     <li>
-      <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+      <Link to={SIGN_IN}>Sign In</Link>
     </li>
   </ul>
 );
