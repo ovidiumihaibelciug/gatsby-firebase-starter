@@ -4,8 +4,8 @@ module.exports = [
   {
     path: '/post',
     collection: 'posts',
-    slug: 'id',
-    context: ['id'],
+    slug: 'title',
+    context: ['title'],
     fileName: 'post',
   },
   // {

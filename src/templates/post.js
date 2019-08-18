@@ -1,19 +1,9 @@
 import React, { Component } from 'react';
-import Layout from '../utils/layout';
-import Post from '../components/scenes/Post/Post';
 
-class PostBase extends Component {
+class Post extends Component {
   render() {
-    const {
-      pageContext: { title },
-    } = this.props;
-
-    return (
-      <Layout>
-        <Post title={title} />
-      </Layout>
-    );
+    return <div>123</div>;
   }
 }
 
-export default PostBase;
+export default Post;

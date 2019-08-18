@@ -2,7 +2,22 @@ const path = require(`path`);
 
 const firebase = require('firebase');
 
-const routes = require('./templates.js');
+const routes = [
+  {
+    path: '/post',
+    collection: 'posts',
+    slug: 'title',
+    context: ['title'],
+    fileName: 'post',
+  },
+  // {
+  //   path: '/comment',
+  //   collection: 'comments',
+  //   slug: 'id',
+  //   context: ['id'],
+  //   fileName: 'comment',
+  // },
+];
 
 const config = {
   apiKey: 'AIzaSyDbWIS7NPu5bZ7dOvMjleTYnYasTdm8qSA',
@@ -14,39 +29,39 @@ const config = {
   appId: '1:45231235288:web:d6f40793a0d70703',
 };
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
-  const app = firebase.initializeApp(config);
+// exports.createPages = async ({ graphql, actions }) => {
+//   const { createPage } = actions;
+//   const app = firebase.initializeApp(config);
+//   console.log('----------------------------');
 
-  console.log(actions);
+//   routes.forEach(
+//     async ({
+//       collection,
+//       path: routePath,
+//       slug,
+//       fileName,
+//       context,
+//     }) => {
+//       const Template = path.resolve(`./src/templates/post.js`);
+//       console.log('Template', Template);
 
-  routes.forEach(
-    async ({
-      collection,
-      path: routePath,
-      slug,
-      fileName,
-      context,
-    }) => {
-      const Template = path.resolve(`src/templates/${fileName}.js`);
-
-      app
-        .firestore()
-        .collection(collection)
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.docs.forEach(item => {
-            const itemData = item.data();
-            createPage({
-              path: `${routePath}/${itemData[slug]}`,
-              component: Template,
-              context: context.reduce((acc, curr) => {
-                acc[curr] = itemData[curr];
-                return acc;
-              }, {}),
-            });
-          });
-        });
-    },
-  );
-};
+//       await app
+//         .firestore()
+//         .collection(collection)
+//         .get()
+//         .then(async querySnapshot => {
+//           querySnapshot.docs.forEach(async item => {
+//             const itemData = item.data();
+//             await createPage({
+//               path: `${routePath}/${itemData[slug]}`,
+//               component: Template,
+//               context: context.reduce((acc, curr) => {
+//                 acc[curr] = itemData[curr];
+//                 return acc;
+//               }, {}),
+//             });
+//           });
+//         });
+//     },
+//   );
+// };
