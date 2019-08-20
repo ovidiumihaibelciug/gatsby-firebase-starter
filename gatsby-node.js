@@ -35,31 +35,35 @@ exports.createPages = async ({ graphql, actions }) => {
   const app = firebase.initializeApp(config);
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
 
-  await routes.map(
-    async ({
-      collection,
-      path: routePath,
-      slug,
-      fileName,
-      context,
-    }) => {
-      await app
-        .firestore()
-        .collection(collection)
-        .get()
-        .then(async querySnapshot => {
-          querySnapshot.docs.forEach(async item => {
-            const itemData = item.data();
-            await createPage({
-              path: `${routePath}/${itemData[slug]}`,
-              component: blogPost,
-              context: context.reduce((acc, curr) => {
-                acc[curr] = itemData[curr];
-                return acc;
-              }, {}),
-            });
+  await Promise.all(
+    routes.map(
+      async ({
+        collection,
+        path: routePath,
+        slug,
+        fileName,
+        context,
+      }) => {
+        await app
+          .firestore()
+          .collection(collection)
+          .get()
+          .then(async querySnapshot => {
+            await Promise.all(
+              querySnapshot.docs.map(async item => {
+                const itemData = item.data();
+                await createPage({
+                  path: `${routePath}/${itemData[slug]}`,
+                  component: blogPost,
+                  context: context.reduce((acc, curr) => {
+                    acc[curr] = itemData[curr];
+                    return acc;
+                  }, {}),
+                });
+              }),
+            );
           });
-        });
-    },
+      },
+    ),
   );
 };
