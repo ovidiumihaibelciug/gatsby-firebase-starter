@@ -3,8 +3,7 @@ import React, { Component, Fragment } from 'react';
 import Navigation from '../components/molecules/Navigation/Navigation';
 import getFirebase, { FirebaseContext } from './Firebase';
 import withAuthentication from './Session/withAuthentication';
-import SEO from './SEO';
-// import '../styles/index.scss';
+import '../styles/index.scss';
 
 class Layout extends Component {
   state = {
@@ -35,7 +34,7 @@ class Layout extends Component {
 const AppWithAuthentication = withAuthentication(
   ({ hideNav, seo, children }) => (
     <Fragment>
-      <SEO {...seo} />
+      {/* <SEO {...seo} /> */}
       {!hideNav && <Navigation />}
       {children}
     </Fragment>

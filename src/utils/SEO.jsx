@@ -79,14 +79,12 @@ const query = graphql`
   query SEO {
     site {
       siteMetadata {
-        app {
-          defaultTitle: title
-          titleTemplate
-          defaultDescription: description
-          siteUrl: url
-          defaultImage: image
-          twitterUsername
-        }
+        defaultTitle: title
+        titleTemplate
+        defaultDescription: description
+        siteUrl: url
+        defaultImage: image
+        twitterUsername
       }
     }
   }

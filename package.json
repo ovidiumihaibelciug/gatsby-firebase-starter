@@ -8,19 +8,21 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
+    "@babel/core": "^7.5.5",
     "classnames": "^2.2.6",
     "core-js": "^2.6.5",
-    "firebase": "^6.0.2",
-    "gatsby": "^2.4.3",
+    "firebase": "^6.4.0",
+    "gatsby": "^2.13.67",
     "gatsby-plugin-create-client-paths": "^2.1.3",
     "gatsby-plugin-react-helmet": "^3.1.3",
-    "gatsby-plugin-sass": "^2.1.3",
+    "gatsby-plugin-sass": "^2.1.8",
+    "invariant": "^2.2.4",
     "node-sass": "^4.12.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "path": "^0.12.7",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
-    "recompose": "^0.30.0",
-    "slug": "^1.1.0"
+    "recompose": "^0.30.0"
   }
 }

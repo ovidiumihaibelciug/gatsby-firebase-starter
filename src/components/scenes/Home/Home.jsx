@@ -73,7 +73,7 @@ class Home extends Component {
   render() {
     const { posts, description, title, loading } = this.state;
 
-    if (loading) return null;
+    if (loading) return <div>Loading...</div>;
 
     return (
       <div className="home">
@@ -115,23 +115,24 @@ class Home extends Component {
           </div>
 
           <div className="home__posts__items">
-            {posts.map((item, id) => (
-              <div className="home__post">
-                <div className="home__post__image" />
-                <div className="home__post__text">
-                  <Link
-                    className="home__post__title"
-                    to={'/post/' + item.title}
-                    key={id}
-                  >
-                    {item.title}
-                  </Link>
-                  <div className="home__post__description" key={id}>
-                    {item.description}
+            {posts &&
+              posts.length > 0 &&
+              posts.map((item, id) => (
+                <div key={id} className="home__post">
+                  <div className="home__post__image" />
+                  <div className="home__post__text">
+                    <Link
+                      className="home__post__title"
+                      to={'/post/' + item.title}
+                    >
+                      {item.title}
+                    </Link>
+                    <div className="home__post__description" key={id}>
+                      {item.description}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>

@@ -1,3 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default () => <div>123</div>;
+class BlogPost extends Component {
+  render() {
+    return <div>3123123123</div>;
+  }
+}
+
+export default BlogPost;

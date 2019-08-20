@@ -31,13 +31,11 @@ const config = {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  console.log('ACTIONS', actions, createPage);
+
   const app = firebase.initializeApp(config);
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
 
-  console.log('----------------------------');
-
-  routes.forEach(
+  await routes.map(
     async ({
       collection,
       path: routePath,
@@ -45,8 +43,6 @@ exports.createPages = async ({ graphql, actions }) => {
       fileName,
       context,
     }) => {
-      console.log('Template', blogPost);
-
       await app
         .firestore()
         .collection(collection)
