@@ -1,0 +1,229 @@
+.register {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  @include breakpoint('phone') {
+    justify-content: center;
+    overflow: visible;
+    height: auto;
+  }
+  &__image {
+    position: relative;
+    flex: 4;
+    width: 80%;
+    background-color: rgba(#302b63, 0.4);
+    z-index: 3;
+
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+
+    @include breakpoint('phone') {
+      display: none;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      right: 20px;
+      background-image: linear-gradient(
+          to bottom,
+          rgba(#0f0c29, 0.9) 10%,
+          rgba(#302b63, 0.7),
+          rgba(#0f0c29, 0.85) 90%
+        ),
+        url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=693&q=80');
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+    }
+  }
+
+  &__content {
+    flex: 3;
+    background-color: #fff;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint('phone') {
+      height: auto;
+      padding: 30px;
+      margin: 0 auto;
+      flex-grow: 3;
+      flex-basis: auto;
+    }
+    &__inner {
+      max-width: 450px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      margin-left: -70px;
+      @include breakpoint('phone') {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+      }
+    }
+    &__providers {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      width: 100%;
+      &--left {
+        margin-right: 50px;
+      }
+      & > div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 30px;
+      }
+      &__item {
+        flex: 1;
+        &:first-child {
+          margin-right: 5px;
+        }
+        &:last-child {
+          margin-left: 5px;
+        }
+        button {
+          border: none;
+          width: 100%;
+          height: 100%;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        }
+
+        &--google {
+          button {
+            background-color: #cc433d;
+            &:hover {
+              background-color: rgba(#cc433d, 0.9);
+            }
+          }
+        }
+        &--facebook {
+          button {
+            background-color: #3a5999;
+            &:hover {
+              background-color: rgba(#3a5999, 0.9);
+            }
+          }
+        }
+        &--twitter {
+          button {
+            background-color: #5aa4eb;
+            &:hover {
+              background-color: rgba(#5aa4eb, 0.9);
+            }
+          }
+        }
+
+        &--github {
+          button {
+            background-color: black;
+            &:hover {
+              background-color: rgba(black, 0.9);
+            }
+          }
+        }
+      }
+    }
+    &__or {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 30px 0;
+      &__line {
+        height: 1.8px;
+        flex: 1;
+        width: 100%;
+        background-color: #302b63;
+      }
+
+      &__text {
+        margin: 0 20px;
+      }
+    }
+    &__password-forget {
+      a {
+        color: rgba(black, 0.9);
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $color-main;
+        }
+      }
+    }
+    &__register {
+      a {
+        color: rgba(black, 0.9);
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $color-main;
+        }
+      }
+    }
+    &__fields {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 4;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 100%;
+    }
+    > div {
+    }
+    &__header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex: 2;
+      @include breakpoint('phone') {
+        flex-grow: 1;
+        flex-basis: auto;
+      }
+      &__title {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: $color-main;
+        margin-bottom: 30px;
+        text-align: center;
+        @include breakpoint('phone') {
+          font-size: 2rem;
+        }
+      }
+      &__logo {
+        height: auto;
+        width: 200px;
+      }
+    }
+
+    &__form {
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

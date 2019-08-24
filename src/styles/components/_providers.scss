@@ -1,0 +1,42 @@
+.provider {
+  border: none;
+  height: 40px;
+  width: 150px;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  span {
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+  &:first-child {
+    margin-top: 20px;
+  }
+  &--google {
+    background-color: #cc433d;
+    &:hover {
+      background-color: rgba(#cc433d, 0.9);
+    }
+  }
+  &--facebook {
+    background-color: #3a5999;
+    &:hover {
+      background-color: rgba(#3a5999, 0.9);
+    }
+  }
+  &--twitter {
+    background-color: #5aa4eb;
+    &:hover {
+      background-color: rgba(#5aa4eb, 0.9);
+    }
+  }
+  &--github {
+    background-color: black;
+    &:hover {
+      background-color: rgba(black, 0.9);
+    }
+  }
+}

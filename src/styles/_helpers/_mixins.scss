@@ -1,0 +1,177 @@
+/*----------------------
+Responsive breakpoints
+-----------------------*/
+@mixin breakpoint ($value, $min-value: false) {
+
+  @if $value == 'phone-small' {
+    @media only screen and (max-width : 330px) { @content; }
+  }
+
+  @if $value == 'phone' {
+    @media only screen and (max-width : 750px) { @content; }
+  }
+
+  @else if $value == 'tablet-p' {
+    @media only screen and (min-width: 751px) and (max-width: 900px) { @content }
+  }
+
+  @else if $value == 'to-tablet-p' {
+    @media only screen and (max-width: 900px) { @content }
+  }
+
+  @else if $value == 'from-tablet-l' {
+    @media only screen and (min-width: 901px) { @content }
+  }
+
+  @else if $value == 'to-tablet-l' {
+    @media only screen and (max-width: 1199px) { @content }
+  }
+
+  @else if $value == 'tablet-l' {
+    @media only screen and (min-width: 901px) and (max-width: 1199px) { @content }
+  }
+
+  @else if $value == 'to-tablet' {
+    @media only screen and (max-width: 1199px) { @content }
+  }
+
+  @else if $value == 'from-tablet' {
+    @media only screen and (min-width: 751px) { @content }
+  }
+
+  @else if $value == 'tablet' {
+    @media only screen and (min-width: 751px) and (max-width: 1199px) { @content }
+  }
+
+  @else if $value == 'to-laptop' {
+    @media only screen and (max-width: 1600px){ @content }
+  }
+
+  @else if $value == 'from-laptop' {
+    @media only screen and (min-width: 1200px){ @content }
+  }
+
+  @else if $value == 'laptop' {
+    @media only screen and (min-width: 1200px) and (max-width: 1600px){ @content }
+  }
+
+  @else if $value == 'desktop' {
+    @media only screen and (min-width: 1601px) { @content }
+  }
+
+  @else {
+    @media only screen and (max-width: $value) { @content; }
+  }
+}
+
+
+/*----------------------
+Rem font unit with px fallback and optional line height
+-----------------------*/
+@mixin font-size($font-size, $line-height: false) {
+
+  font-size: (parseVal($font-size) / 10) * 1rem;
+
+  @if $line-height {
+    line-height: $line-height;
+  }
+}
+
+
+//  Background svg mixin
+@mixin svg-bg($svg){
+  background-image: svg-url($svg);
+}
+
+
+
+/*----------------------
+Responsive breakpoints
+-----------------------*/
+@mixin mds-breakpoint ($value, $min-value: false) {
+
+  @if $value == 'phone-small' {
+    @media only screen and (max-width : 330px) { @content; }
+  }
+
+  @if $value == 'phone' {
+    @media only screen and (max-width : 750px) { @content; }
+  }
+
+  @else if $value == 'to-tablet' {
+    @media only screen and (max-width: 1199px) { @content }
+  }
+
+  @else if $value == 'from-tablet' {
+    @media only screen and (min-width: 751px) { @content }
+  }
+
+  @else if $value == 'tablet-p' {
+    @media only screen and (min-width: 751px) and (max-width: 900px) { @content }
+  }
+
+  @else if $value == 'to-tablet-p' {
+    @media only screen and (max-width: 900px) { @content }
+  }
+
+  @else if $value == 'tablet-l' {
+    @media only screen and (min-width: 901px) and (max-width: 1199px) { @content }
+  }
+
+  @else if $value == 'from-tablet-l' {
+    @media only screen and (min-width: 901px) { @content }
+  }
+
+  @else if $value == 'tablet' {
+    @media only screen and (min-width: 751px) and (max-width: 1199px) { @content }
+  }
+
+  @else if $value == 'to-laptop' {
+    @media only screen and (max-width: 1600px){ @content }
+  }
+
+  @else if $value == 'from-laptop' {
+    @media only screen and (min-width: 1200px){ @content }
+  }
+
+  @else if $value == 'laptop' {
+    @media only screen and (min-width: 1200px) and (max-width: 1600px){ @content }
+  }
+
+  @else if $value == 'desktop' {
+    @media only screen and (min-width: 1601px) { @content }
+  }
+
+  @else if $min-value != false {
+    @media only screen and (min-width: $min-value) and (max-width: $value){ @content }
+  }
+
+  @else {
+    @media only screen and (max-width: $value) { @content; }
+  }
+}
+
+
+/*----------------------
+Rem font unit with px fallback and optional line height
+-----------------------*/
+@mixin mds-font-size($font-size, $line-height: false) {
+
+  font-size: (parseVal($font-size) / 10) * 1rem;
+
+  @if $line-height {
+    line-height: $line-height;
+  }
+}
+
+
+//  Background svg mixin
+@mixin mds-svg-bg($svg){
+  background-image: svg-url($svg);
+}
+
+
+
+
+
+

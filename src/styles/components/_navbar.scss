@@ -1,0 +1,46 @@
+.navbar {
+  width: 100%;
+  height: 90px;
+  padding: 0 50px;
+  margin: 0 auto;
+  background-color: $color-main;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    @include breakpoint('phone') {
+      flex-direction: column;
+    }
+  }
+  &__left {
+    display: flex;
+  }
+  &__logo {
+    margin-right: 20px;
+    img {
+      height: 50px;
+      width: auto;
+    }
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+  }
+  &__link {
+    margin: 0 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      transition: all 0.1s ease-in-out;
+      &:hover {
+        color: rgba(white, 0.8);
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+//Add custom font here
+//@font-face {
+//  font-family: 'Roboto';
+//  src: url('#{$font-path}/roboto/Roboto-Regular.woff2') format('woff2'),
+//  url('#{$font-path}/roboto/Roboto-Regular.woff') format('woff');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap');
+
+* {
+  font-family: Poppins, sans-serif;
+}
