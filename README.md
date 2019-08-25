@@ -18,7 +18,7 @@ Kick off your project with this gatsby firebase boilerplate. This starter ships 
 
     ```sh
     # create a new Gatsby site using the blog starter
-    gatsby new my-firebase-starter https://github.com/gatsbyjs/gatsby-starter-blog
+    gatsby new my-firebase-starter https://github.com/gatsbyjs/gatsby-firebase-starter
     ```
 
 2.  **Add firebase config**
