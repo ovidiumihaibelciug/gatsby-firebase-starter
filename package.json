@@ -1,6 +1,6 @@
 {
   "name": "gatsby-firebase-starter",
-  "description": "Gatsby hello world starter",
+  "description": "Starter / Project Boilerplate for Authentication and creating Dynamic pages from collections with Firebase and Gatsby.js",
   "scripts": {
     "develop": "gatsby develop",
     "start": "npm run develop",
