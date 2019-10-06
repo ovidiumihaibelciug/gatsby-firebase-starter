@@ -74,7 +74,8 @@ Kick off your project with this gatsby firebase boilerplate. This starter ships 
 
 ## ⚙️ Features
 
-- `Dynamic pages from collections`
+- Dynamic pages from Firestore collections
+- Includes React Helmet to allow editing site meta tags
 - PWA Support
 - SEO
 - Sign In
