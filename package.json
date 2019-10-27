@@ -22,7 +22,6 @@
     "gatsby-plugin-sitemap": "^2.2.9",
     "invariant": "^2.2.4",
     "node-sass": "^4.12.0",
-    "path": "^0.12.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
