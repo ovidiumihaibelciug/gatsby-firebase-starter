@@ -14,7 +14,6 @@ module.exports = {
       options: { prefixes: [`/post/*`] },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -52,7 +52,18 @@ class Home extends Component {
     const { title, description, posts } = this.state;
     const { firebase } = this.props;
 
-    const newPosts = [{ title, description }, ...posts];
+    const newPosts = [
+      {
+        title,
+        slug: title
+          .replace(/[^a-zA-Z ]/g, '')
+          .toLowerCase()
+          .split(' ')
+          .join('-'),
+        description,
+      },
+      ...posts,
+    ];
 
     this.setState({
       posts: newPosts,
