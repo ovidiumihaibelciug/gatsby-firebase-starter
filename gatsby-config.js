@@ -13,6 +13,8 @@ module.exports = {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/post/*`] },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -32,8 +34,6 @@ module.exports = {
         path: `${__dirname}/src/assets`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
   ],
