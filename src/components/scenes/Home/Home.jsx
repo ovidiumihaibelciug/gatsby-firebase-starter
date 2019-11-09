@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { withFirebase } from '../../../utils/Firebase';
 import Input from '../../atoms/Input';
 import Button from '../../atoms/Button';
+import Loading from '../../atoms/Loading';
 
 class Home extends Component {
   _initFirebase = false;
@@ -74,7 +75,7 @@ class Home extends Component {
   render() {
     const { posts, description, title, loading } = this.state;
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <Loading />;
 
     return (
       <div className="home container">
@@ -118,18 +119,26 @@ class Home extends Component {
               posts.length > 0 &&
               posts.map((item, id) => (
                 <div key={id} className="home__post">
-                  <div className="home__post__image" />
-                  <div className="home__post__text">
-                    <Link
-                      className="home__post__title"
-                      to={'/post/' + item.title}
-                    >
-                      {item.title}
-                    </Link>
-                    <div className="home__post__description" key={id}>
-                      {item.description}
+                  <Link
+                    className="home__post__title"
+                    to={'/post/' + item.title}
+                  >
+                    <div className="home__post__image" />
+                    <div className="home__post__text">
+                      {item.title && item.title < 30
+                        ? item.title
+                        : item.title.slice(0, 30) + '...'}
+                      <div
+                        className="home__post__description"
+                        key={id}
+                      >
+                        {item.description &&
+                        item.description.length > 150
+                          ? item.description.slice(0, 150)
+                          : item.description + '...'}
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
           </div>
