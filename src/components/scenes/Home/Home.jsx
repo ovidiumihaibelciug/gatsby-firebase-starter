@@ -4,6 +4,7 @@ import { withFirebase } from '../../../utils/Firebase';
 import Input from '../../atoms/Input';
 import Button from '../../atoms/Button';
 import Loading from '../../atoms/Loading';
+import Image from '../../atoms/Image';
 
 class Home extends Component {
   _initFirebase = false;
@@ -123,7 +124,10 @@ class Home extends Component {
                     className="home__post__title"
                     to={'/post/' + item.title}
                   >
-                    <div className="home__post__image" />
+                    <Image
+                      className="home__post__image"
+                      filename="gatsby-post-bg.jpg"
+                    />
                     <div className="home__post__text">
                       {item.title && item.title < 30
                         ? item.title
