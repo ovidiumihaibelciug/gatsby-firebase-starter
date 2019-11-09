@@ -34,6 +34,7 @@ module.exports = {
         path: `${__dirname}/src/assets`,
       },
     },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
   ],
