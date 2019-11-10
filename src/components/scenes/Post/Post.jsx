@@ -34,13 +34,10 @@ class Post extends Component {
   getPost = () => {
     const { firebase, slug } = this.props;
 
-    console.log('this.propsaaaaaaaa', this.props);
-
     firebase
       .post({ slug })
       .get()
       .then(result => {
-        console.log('result', result);
         this.setState({
           post: result.docs && result.docs[0].data(),
           loading: false,
@@ -52,15 +49,12 @@ class Post extends Component {
     const { loading, post } = this.state;
     const { isLoaded, title, description } = this.props;
 
-    console.log(post, this.props);
-
     const finalDescription = isLoaded
       ? description
       : post && post.description;
     const finalTitle = isLoaded ? title : post && post.title;
 
     if (!isLoaded && loading) return null;
-    console.log('---post---', post);
 
     return (
       <div className="post container">

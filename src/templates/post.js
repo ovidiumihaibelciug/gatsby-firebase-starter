@@ -6,18 +6,21 @@ export class Post extends Component {
   render() {
     const {
       pageContext: { title, description, slug },
+      uri,
     } = this.props;
 
-    console.log('loads', this.props);
+    const uriItems = uri.split('/');
 
-    const isLoaded = this.props['*'] === slug;
+    const uriSlug = uriItems[uriItems.length - 1];
+
+    const isLoaded = uriSlug === slug;
 
     return (
       <Layout>
         <PostBase
           title={title}
           description={description}
-          slug={this.props['*']}
+          slug={slug || uriSlug}
           isLoaded={isLoaded}
         />
       </Layout>

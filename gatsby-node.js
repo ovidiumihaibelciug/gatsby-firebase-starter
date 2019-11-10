@@ -33,7 +33,6 @@ exports.createPages = async ({ graphql, actions }) => {
                   component: Template,
                   context: context.reduce((acc, curr) => {
                     acc[curr] = itemData[curr];
-                    console.log(acc);
                     return acc;
                   }, {}),
                 });
