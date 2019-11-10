@@ -8,6 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const app = firebase.initializeApp(config);
+
   await Promise.all(
     routes.map(
       async ({
@@ -42,4 +43,18 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     ),
   );
+};
+
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions;
+  // page.matchPath is a special key that's used for matching pages
+  // only on the client.
+  routes.forEach(item => {
+    const regex = new RegExp(`${item.path}`, 'g');
+    if (page.path.match(regex)) {
+      page.matchPath = `${item.path}/*`;
+      // Update the page.
+      createPage(page);
+    }
+  });
 };
