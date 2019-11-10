@@ -147,6 +147,21 @@
         margin: 0 20px;
       }
     }
+    &__creator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 20%;
+        margin-top: 20px;
+        > div {
+          margin-right: 10px;
+        }
+      }
+    }
     &__password-forget {
       a {
         color: rgba(black, 0.9);

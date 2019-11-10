@@ -4,6 +4,9 @@
   padding: 0 50px;
   margin: 0 auto;
   background-color: $color-main;
+  @include breakpoint('phone') {
+    height: auto;
+  }
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -30,6 +33,20 @@
   }
   &__link {
     margin: 0 10px;
+    &--github {
+      display: flex;
+      align-items: center;
+      color: white;
+      @include breakpoint('phone') {
+        display: none;
+      }
+      &__a {
+        margin-right: 10px;
+      }
+      > div {
+        margin-right: 10px;
+      }
+    }
     &:first-child {
       margin-left: 0;
     }
