@@ -5,16 +5,19 @@ import PostBase from '../components/scenes/Post/Post';
 export class Post extends Component {
   render() {
     const {
-      pageContext: { title, description },
+      pageContext: { title, description, slug },
     } = this.props;
 
-    const isLoaded = this.props['*'] === title;
+    console.log('loads', this.props);
+
+    const isLoaded = this.props['*'] === slug;
 
     return (
       <Layout>
         <PostBase
-          title={isLoaded ? title : this.props['*']}
+          title={title}
           description={description}
+          slug={this.props['*']}
           isLoaded={isLoaded}
         />
       </Layout>

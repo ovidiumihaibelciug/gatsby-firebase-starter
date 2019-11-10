@@ -52,18 +52,24 @@ class Home extends Component {
     const { title, description, posts } = this.state;
     const { firebase } = this.props;
 
-    const newPosts = [
-      {
-        title,
-        slug: title
-          .replace(/[^a-zA-Z ]/g, '')
+    let slug =
+      (title.match(/^[a-zA-Z0-9 ]*$/, '') &&
+        title.match(/^[a-zA-Z0-9 ]*$/, '')[0]) ||
+      '';
+
+    const latestPost = {
+      title,
+      slug:
+        slug
           .toLowerCase()
           .split(' ')
-          .join('-'),
-        description,
-      },
-      ...posts,
-    ];
+          .join('-') +
+        Math.floor(Math.random() * 200) +
+        1,
+      description,
+    };
+
+    const newPosts = [latestPost, ...posts];
 
     this.setState({
       posts: newPosts,
@@ -72,8 +78,7 @@ class Home extends Component {
     });
 
     firebase.posts().add({
-      title,
-      description,
+      ...latestPost,
     });
   };
 
@@ -88,6 +93,8 @@ class Home extends Component {
     const { posts, description, title, loading } = this.state;
 
     if (loading) return <Loading />;
+
+    console.log(posts);
 
     return (
       <div className="home container">
@@ -133,7 +140,7 @@ class Home extends Component {
                 <div key={id} className="home__post">
                   <Link
                     className="home__post__title"
-                    to={'/post/' + item.title}
+                    to={'/post/' + item.slug}
                   >
                     <Image
                       className="home__post__image"
