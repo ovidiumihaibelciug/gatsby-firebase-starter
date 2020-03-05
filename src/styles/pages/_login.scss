@@ -47,6 +47,7 @@
     background-color: #fff;
     z-index: 1;
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     @include breakpoint('phone') {
